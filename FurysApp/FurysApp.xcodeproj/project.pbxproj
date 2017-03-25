@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BCBA10D11E817DE500B8F6AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBA10D01E817DE500B8F6AF /* AppDelegate.swift */; };
+		BCBA10D31E817DE500B8F6AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBA10D21E817DE500B8F6AF /* ViewController.swift */; };
+		BCBA10D61E817DE500B8F6AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCBA10D41E817DE500B8F6AF /* Main.storyboard */; };
+		BCBA10D81E817DE500B8F6AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCBA10D71E817DE500B8F6AF /* Assets.xcassets */; };
+		BCBA10DB1E817DE500B8F6AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCBA10D91E817DE500B8F6AF /* LaunchScreen.storyboard */; };
+		BCBA10E61E817DE500B8F6AF /* FurysAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBA10E51E817DE500B8F6AF /* FurysAppTests.swift */; };
+		BCBA10F11E817DE500B8F6AF /* FurysAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBA10F01E817DE500B8F6AF /* FurysAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BCBA10E21E817DE500B8F6AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCBA10C51E817DE500B8F6AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCBA10CC1E817DE500B8F6AF;
+			remoteInfo = FurysApp;
+		};
+		BCBA10ED1E817DE500B8F6AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCBA10C51E817DE500B8F6AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCBA10CC1E817DE500B8F6AF;
+			remoteInfo = FurysApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BCBA10CD1E817DE500B8F6AF /* FurysApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FurysApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCBA10D01E817DE500B8F6AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BCBA10D21E817DE500B8F6AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BCBA10D51E817DE500B8F6AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BCBA10D71E817DE500B8F6AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BCBA10DA1E817DE500B8F6AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BCBA10DC1E817DE500B8F6AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCBA10E11E817DE500B8F6AF /* FurysAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FurysAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCBA10E51E817DE500B8F6AF /* FurysAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurysAppTests.swift; sourceTree = "<group>"; };
+		BCBA10E71E817DE500B8F6AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCBA10EC1E817DE500B8F6AF /* FurysAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FurysAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCBA10F01E817DE500B8F6AF /* FurysAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurysAppUITests.swift; sourceTree = "<group>"; };
+		BCBA10F21E817DE500B8F6AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BCBA10CA1E817DE500B8F6AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCBA10DE1E817DE500B8F6AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCBA10E91E817DE500B8F6AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BCBA10C41E817DE500B8F6AF = {
+			isa = PBXGroup;
+			children = (
+				BCBA10CF1E817DE500B8F6AF /* FurysApp */,
+				BCBA10E41E817DE500B8F6AF /* FurysAppTests */,
+				BCBA10EF1E817DE500B8F6AF /* FurysAppUITests */,
+				BCBA10CE1E817DE500B8F6AF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BCBA10CE1E817DE500B8F6AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BCBA10CD1E817DE500B8F6AF /* FurysApp.app */,
+				BCBA10E11E817DE500B8F6AF /* FurysAppTests.xctest */,
+				BCBA10EC1E817DE500B8F6AF /* FurysAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BCBA10CF1E817DE500B8F6AF /* FurysApp */ = {
+			isa = PBXGroup;
+			children = (
+				BCBA10D01E817DE500B8F6AF /* AppDelegate.swift */,
+				BCBA10D21E817DE500B8F6AF /* ViewController.swift */,
+				BCBA10D41E817DE500B8F6AF /* Main.storyboard */,
+				BCBA10D71E817DE500B8F6AF /* Assets.xcassets */,
+				BCBA10D91E817DE500B8F6AF /* LaunchScreen.storyboard */,
+				BCBA10DC1E817DE500B8F6AF /* Info.plist */,
+			);
+			path = FurysApp;
+			sourceTree = "<group>";
+		};
+		BCBA10E41E817DE500B8F6AF /* FurysAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				BCBA10E51E817DE500B8F6AF /* FurysAppTests.swift */,
+				BCBA10E71E817DE500B8F6AF /* Info.plist */,
+			);
+			path = FurysAppTests;
+			sourceTree = "<group>";
+		};
+		BCBA10EF1E817DE500B8F6AF /* FurysAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BCBA10F01E817DE500B8F6AF /* FurysAppUITests.swift */,
+				BCBA10F21E817DE500B8F6AF /* Info.plist */,
+			);
+			path = FurysAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BCBA10CC1E817DE500B8F6AF /* FurysApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCBA10F51E817DE500B8F6AF /* Build configuration list for PBXNativeTarget "FurysApp" */;
+			buildPhases = (
+				BCBA10C91E817DE500B8F6AF /* Sources */,
+				BCBA10CA1E817DE500B8F6AF /* Frameworks */,
+				BCBA10CB1E817DE500B8F6AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FurysApp;
+			productName = FurysApp;
+			productReference = BCBA10CD1E817DE500B8F6AF /* FurysApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BCBA10E01E817DE500B8F6AF /* FurysAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCBA10F81E817DE500B8F6AF /* Build configuration list for PBXNativeTarget "FurysAppTests" */;
+			buildPhases = (
+				BCBA10DD1E817DE500B8F6AF /* Sources */,
+				BCBA10DE1E817DE500B8F6AF /* Frameworks */,
+				BCBA10DF1E817DE500B8F6AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCBA10E31E817DE500B8F6AF /* PBXTargetDependency */,
+			);
+			name = FurysAppTests;
+			productName = FurysAppTests;
+			productReference = BCBA10E11E817DE500B8F6AF /* FurysAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BCBA10EB1E817DE500B8F6AF /* FurysAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCBA10FB1E817DE500B8F6AF /* Build configuration list for PBXNativeTarget "FurysAppUITests" */;
+			buildPhases = (
+				BCBA10E81E817DE500B8F6AF /* Sources */,
+				BCBA10E91E817DE500B8F6AF /* Frameworks */,
+				BCBA10EA1E817DE500B8F6AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCBA10EE1E817DE500B8F6AF /* PBXTargetDependency */,
+			);
+			name = FurysAppUITests;
+			productName = FurysAppUITests;
+			productReference = BCBA10EC1E817DE500B8F6AF /* FurysAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BCBA10C51E817DE500B8F6AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Dion MacIntyre";
+				TargetAttributes = {
+					BCBA10CC1E817DE500B8F6AF = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = JZAA8RECCB;
+						ProvisioningStyle = Automatic;
+					};
+					BCBA10E01E817DE500B8F6AF = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = JZAA8RECCB;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BCBA10CC1E817DE500B8F6AF;
+					};
+					BCBA10EB1E817DE500B8F6AF = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = JZAA8RECCB;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BCBA10CC1E817DE500B8F6AF;
+					};
+				};
+			};
+			buildConfigurationList = BCBA10C81E817DE500B8F6AF /* Build configuration list for PBXProject "FurysApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BCBA10C41E817DE500B8F6AF;
+			productRefGroup = BCBA10CE1E817DE500B8F6AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BCBA10CC1E817DE500B8F6AF /* FurysApp */,
+				BCBA10E01E817DE500B8F6AF /* FurysAppTests */,
+				BCBA10EB1E817DE500B8F6AF /* FurysAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BCBA10CB1E817DE500B8F6AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCBA10DB1E817DE500B8F6AF /* LaunchScreen.storyboard in Resources */,
+				BCBA10D81E817DE500B8F6AF /* Assets.xcassets in Resources */,
+				BCBA10D61E817DE500B8F6AF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCBA10DF1E817DE500B8F6AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCBA10EA1E817DE500B8F6AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BCBA10C91E817DE500B8F6AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCBA10D31E817DE500B8F6AF /* ViewController.swift in Sources */,
+				BCBA10D11E817DE500B8F6AF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCBA10DD1E817DE500B8F6AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCBA10E61E817DE500B8F6AF /* FurysAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCBA10E81E817DE500B8F6AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCBA10F11E817DE500B8F6AF /* FurysAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BCBA10E31E817DE500B8F6AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCBA10CC1E817DE500B8F6AF /* FurysApp */;
+			targetProxy = BCBA10E21E817DE500B8F6AF /* PBXContainerItemProxy */;
+		};
+		BCBA10EE1E817DE500B8F6AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCBA10CC1E817DE500B8F6AF /* FurysApp */;
+			targetProxy = BCBA10ED1E817DE500B8F6AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BCBA10D41E817DE500B8F6AF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCBA10D51E817DE500B8F6AF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BCBA10D91E817DE500B8F6AF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCBA10DA1E817DE500B8F6AF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BCBA10F31E817DE500B8F6AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BCBA10F41E817DE500B8F6AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BCBA10F61E817DE500B8F6AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JZAA8RECCB;
+				INFOPLIST_FILE = FurysApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dionmm.FurysApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		BCBA10F71E817DE500B8F6AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JZAA8RECCB;
+				INFOPLIST_FILE = FurysApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dionmm.FurysApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		BCBA10F91E817DE500B8F6AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = JZAA8RECCB;
+				INFOPLIST_FILE = FurysAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dionmm.FurysAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FurysApp.app/FurysApp";
+			};
+			name = Debug;
+		};
+		BCBA10FA1E817DE500B8F6AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = JZAA8RECCB;
+				INFOPLIST_FILE = FurysAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dionmm.FurysAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FurysApp.app/FurysApp";
+			};
+			name = Release;
+		};
+		BCBA10FC1E817DE500B8F6AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = JZAA8RECCB;
+				INFOPLIST_FILE = FurysAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dionmm.FurysAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = FurysApp;
+			};
+			name = Debug;
+		};
+		BCBA10FD1E817DE500B8F6AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = JZAA8RECCB;
+				INFOPLIST_FILE = FurysAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dionmm.FurysAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = FurysApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BCBA10C81E817DE500B8F6AF /* Build configuration list for PBXProject "FurysApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCBA10F31E817DE500B8F6AF /* Debug */,
+				BCBA10F41E817DE500B8F6AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCBA10F51E817DE500B8F6AF /* Build configuration list for PBXNativeTarget "FurysApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCBA10F61E817DE500B8F6AF /* Debug */,
+				BCBA10F71E817DE500B8F6AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BCBA10F81E817DE500B8F6AF /* Build configuration list for PBXNativeTarget "FurysAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCBA10F91E817DE500B8F6AF /* Debug */,
+				BCBA10FA1E817DE500B8F6AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BCBA10FB1E817DE500B8F6AF /* Build configuration list for PBXNativeTarget "FurysAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCBA10FC1E817DE500B8F6AF /* Debug */,
+				BCBA10FD1E817DE500B8F6AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BCBA10C51E817DE500B8F6AF /* Project object */;
+}
