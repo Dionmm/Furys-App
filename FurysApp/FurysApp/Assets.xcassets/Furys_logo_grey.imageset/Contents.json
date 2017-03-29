@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Furys_logo_grey_200.png",
+      "filename" : "Furys_logo_grey.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Furys_logo_grey.png",
       "scale" : "2x"
     },
     {
