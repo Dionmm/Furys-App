@@ -8,12 +8,16 @@
 
 import UIKit
 
-class FurysNavigationController: UINavigationController {
+class InitialNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        UIApplication.shared.statusBarStyle = .lightContent
+        let furysColour = UIColor(red: 51/255.0, green: 54/255.0, blue: 63/255.0, alpha: 1)
+        self.navigationBar.barTintColor = furysColour
+        self.navigationBar.tintColor = UIColor.white
+        self.navigationBar.isTranslucent = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +25,16 @@ class FurysNavigationController: UINavigationController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+        return UIInterfaceOrientationMask.portrait
+    }
+    
+    open override var shouldAutorotate: Bool{
+        return false
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 
