@@ -179,53 +179,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgp-5c-kuH" customClass="CircleView" customModule="FurysApp" customModuleProvider="target">
-                                <rect key="frame" x="16" y="72" width="343" height="546"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCh-ac-fqD">
-                                        <rect key="frame" x="148" y="496" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <segue destination="pjR-uy-LUi" kind="show" id="lVa-5b-nqe"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOO-Pq-aud">
-                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="PdE-JK-8zx"/>
-                                </constraints>
-                                <items>
-                                    <tabBarItem systemItem="favorites" id="bKo-7E-E6d"/>
-                                    <tabBarItem systemItem="more" id="uiJ-hZ-42x"/>
-                                </items>
-                            </tabBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UM7-Hc-zUP" customClass="HalfCircleButton" customModule="FurysApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="59" width="171.5" height="559"/>
+                                <state key="normal" title="Beer"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="scale">
+                                        <real key="value" value="1.8999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rightSide" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="pjR-uy-LUi" kind="show" id="eLh-fW-36l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrB-wM-ZIZ" customClass="HalfCircleButton" customModule="FurysApp" customModuleProvider="target">
+                                <rect key="frame" x="187.5" y="59" width="171.5" height="559"/>
+                                <state key="normal" title="Spirit"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="scale">
+                                        <real key="value" value="1.8999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rightSide" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="m3a-rx-oKz" kind="show" id="aRA-CH-f2B"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QOO-Pq-aud" firstAttribute="leading" secondItem="6Jm-p4-kjT" secondAttribute="leading" id="AFR-Hw-rTO"/>
-                            <constraint firstItem="sgp-5c-kuH" firstAttribute="top" secondItem="xkh-OI-DWk" secondAttribute="bottom" constant="8" symbolic="YES" id="IGM-OJ-EdQ"/>
-                            <constraint firstItem="sgp-5c-kuH" firstAttribute="trailing" secondItem="6Jm-p4-kjT" secondAttribute="trailingMargin" id="KAc-9o-URp"/>
-                            <constraint firstItem="QOO-Pq-aud" firstAttribute="top" secondItem="sgp-5c-kuH" secondAttribute="bottom" id="WFl-Kc-kdn"/>
-                            <constraint firstAttribute="trailing" secondItem="QOO-Pq-aud" secondAttribute="trailing" id="cky-9w-Ctu"/>
-                            <constraint firstItem="lee-br-MgT" firstAttribute="top" secondItem="QOO-Pq-aud" secondAttribute="bottom" id="dJ2-xm-xjC"/>
-                            <constraint firstItem="sgp-5c-kuH" firstAttribute="leading" secondItem="6Jm-p4-kjT" secondAttribute="leadingMargin" id="reW-VM-yCt"/>
+                            <constraint firstItem="TrB-wM-ZIZ" firstAttribute="top" secondItem="xkh-OI-DWk" secondAttribute="bottom" constant="-5" id="5ZM-AR-x37"/>
+                            <constraint firstItem="lee-br-MgT" firstAttribute="top" secondItem="UM7-Hc-zUP" secondAttribute="bottom" id="7kq-pb-Rcn"/>
+                            <constraint firstItem="lee-br-MgT" firstAttribute="top" secondItem="TrB-wM-ZIZ" secondAttribute="bottom" id="BKz-E4-0S0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TrB-wM-ZIZ" secondAttribute="trailing" id="MIq-gE-Mh8"/>
+                            <constraint firstItem="UM7-Hc-zUP" firstAttribute="top" secondItem="xkh-OI-DWk" secondAttribute="bottom" constant="-5" id="Vb9-Kr-6yh"/>
+                            <constraint firstItem="TrB-wM-ZIZ" firstAttribute="leading" secondItem="UM7-Hc-zUP" secondAttribute="trailing" id="f8X-0k-gfB"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="UM7-Hc-zUP" secondAttribute="leading" id="fS9-Ub-2Uh"/>
+                            <constraint firstItem="TrB-wM-ZIZ" firstAttribute="width" secondItem="UM7-Hc-zUP" secondAttribute="width" id="tqb-ql-FL1"/>
+                            <constraint firstItem="TrB-wM-ZIZ" firstAttribute="height" secondItem="UM7-Hc-zUP" secondAttribute="height" id="vzs-US-PiT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NuZ-GG-HnA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwM-d1-QKF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1532" y="1395.6521739130435"/>
+            <point key="canvasLocation" x="2277.5999999999999" y="1398.3508245877063"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OoV-pd-1Qc">
+            <objects>
+                <viewController storyboardIdentifier="SpiritView" id="m3a-rx-oKz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wma-w6-2KA"/>
+                        <viewControllerLayoutGuide type="bottom" id="p9B-5X-IqF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QXn-2b-iMw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spirit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7In-Qk-CVw">
+                                <rect key="frame" x="16" y="72" width="41" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EXa-BL-fhe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3282" y="1799"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hfN-oE-neS">
             <objects>
-                <viewController id="pjR-uy-LUi" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BeerView" id="pjR-uy-LUi" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VNa-vJ-94b"/>
                         <viewControllerLayoutGuide type="bottom" id="ORZ-jC-cB7"/>
@@ -233,12 +263,21 @@
                     <view key="view" contentMode="scaleToFill" id="6SJ-VW-ci7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Beer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ox-dF-lOO">
+                                <rect key="frame" x="16" y="72" width="36" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bo9-aH-eWJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2248" y="1389"/>
+            <point key="canvasLocation" x="3276" y="1036"/>
         </scene>
         <!--Register Controller-->
         <scene sceneID="Ycn-ga-hN8">
@@ -364,10 +403,28 @@
             </objects>
             <point key="canvasLocation" x="592.79999999999995" y="690.40479760119945"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="568-09-JDY">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTabController" id="Ufp-4W-lmV" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="wfx-Wa-lt2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="nuE-Je-gaH" kind="relationship" relationship="viewControllers" id="5xZ-Ma-hxG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DXi-Nl-iC1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="593" y="1764"/>
+        </scene>
         <!--Furys Navigation Controller-->
         <scene sceneID="wII-VU-fAZ">
             <objects>
                 <navigationController storyboardIdentifier="MainNavigation" automaticallyAdjustsScrollViewInsets="NO" id="nuE-Je-gaH" customClass="FurysNavigationController" customModule="FurysApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="KNf-KI-R4s"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2iZ-pI-zcO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -380,7 +437,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slI-ET-JB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="593" y="1396"/>
+            <point key="canvasLocation" x="1465" y="1400"/>
         </scene>
     </scenes>
     <resources>

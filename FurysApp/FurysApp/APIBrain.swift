@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Security
 
 class APIBrain {
     var url = "https://api.furysayr.co.uk"
@@ -79,15 +80,31 @@ class APIBrain {
         createRequest(type: "POST", to: loginURL, with: requestBody){data, responseCode in
             //Check for success and auth token then save authtoken to user defaults
             if let authToken = data["access_token"] {
+                
+                
+                let expiryDate = self.CalculateExpiryDate(with: (data["expires_in"] as! Double?)!)
+                
+                
                 let defaults = UserDefaults.standard
                 defaults.set(authToken, forKey: "authToken")
-                defaults.set(data["userName"], forKey: "Username")
+                defaults.set(data["userName"], forKey: "username")
+                defaults.set(expiryDate, forKey: "tokenExpiryDate")
             }
             callback(data, responseCode)
             
         }
         
     }
+    
+    func CalculateExpiryDate(with expiryTime: Double) -> Double{
+        let currentDate = Date()
+        print(currentDate)
+        let currentDateInSeconds = Double(currentDate.timeIntervalSinceReferenceDate)
+        
+        return currentDateInSeconds + expiryTime
+        
+    }
+    
     
     func registerUser(username: String, password: String, email: String, callback: @escaping (Dictionary<String, Any>, Int) -> ()){
         let registerURL = createURL(to: "/user/register")

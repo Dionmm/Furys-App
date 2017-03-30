@@ -13,6 +13,7 @@
 		BC0AF42C1E8AD4B80045782B /* SelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0AF42B1E8AD4B80045782B /* SelectionController.swift */; };
 		BC0AF42E1E8AD7CA0045782B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0AF42D1E8AD7CA0045782B /* CircleView.swift */; };
 		BC14481F1E86DB7B00D9D144 /* APIBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC14481E1E86DB7B00D9D144 /* APIBrain.swift */; };
+		BC5694101E8DA182009E81F1 /* HalfCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56940F1E8DA182009E81F1 /* HalfCircleButton.swift */; };
 		BCBA10D11E817DE500B8F6AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBA10D01E817DE500B8F6AF /* AppDelegate.swift */; };
 		BCBA10D31E817DE500B8F6AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBA10D21E817DE500B8F6AF /* ViewController.swift */; };
 		BCBA10D61E817DE500B8F6AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCBA10D41E817DE500B8F6AF /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		BC0AF42B1E8AD4B80045782B /* SelectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionController.swift; sourceTree = "<group>"; };
 		BC0AF42D1E8AD7CA0045782B /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		BC14481E1E86DB7B00D9D144 /* APIBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIBrain.swift; sourceTree = "<group>"; };
+		BC56940F1E8DA182009E81F1 /* HalfCircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfCircleButton.swift; sourceTree = "<group>"; };
 		BC5E350E1E8D791E005F30FE /* FurysApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FurysApp.entitlements; sourceTree = "<group>"; };
 		BCBA10CD1E817DE500B8F6AF /* FurysApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FurysApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCBA10D01E817DE500B8F6AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				BC0AF4231E86FBD50045782B /* RegisterController.swift */,
 				BC0AF4291E8AD06A0045782B /* FurysNavigationController.swift */,
 				BC0AF42D1E8AD7CA0045782B /* CircleView.swift */,
+				BC56940F1E8DA182009E81F1 /* HalfCircleButton.swift */,
 			);
 			path = FurysApp;
 			sourceTree = "<group>";
@@ -217,7 +220,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplePay = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -292,6 +295,7 @@
 				BC0AF42C1E8AD4B80045782B /* SelectionController.swift in Sources */,
 				BCBA10D31E817DE500B8F6AF /* ViewController.swift in Sources */,
 				BCBA10D11E817DE500B8F6AF /* AppDelegate.swift in Sources */,
+				BC5694101E8DA182009E81F1 /* HalfCircleButton.swift in Sources */,
 				BC14481F1E86DB7B00D9D144 /* APIBrain.swift in Sources */,
 				BC0AF4281E8ACF2D0045782B /* LoginController.swift in Sources */,
 				BC0AF42A1E8AD06A0045782B /* FurysNavigationController.swift in Sources */,
@@ -446,7 +450,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = FurysApp/FurysApp.entitlements;
 				DEVELOPMENT_TEAM = JZAA8RECCB;
 				INFOPLIST_FILE = FurysApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -460,7 +463,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = FurysApp/FurysApp.entitlements;
 				DEVELOPMENT_TEAM = JZAA8RECCB;
 				INFOPLIST_FILE = FurysApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

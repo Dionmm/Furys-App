@@ -35,17 +35,13 @@ class LoginController: UIViewController {
                 DispatchQueue.main.async {
                     if responseCode == 200 {
                         //Moves the storyboard to the mainNavigation view which is the core part of the app once logged in
-                        let next = self.storyboard?.instantiateViewController(withIdentifier: "MainNavigation")
+                        let next = self.storyboard?.instantiateViewController(withIdentifier: "MainTabController")
                         self.present(next!, animated: true, completion: nil)
                     } else if responseCode == 400{
                         self.errorLabel.text = data["error_description"] as! String?
                     } else{
                         print("now")
                         self.errorLabel.text = data["error"] as! String?
-                    }
-                    let defaults = UserDefaults.standard
-                    if let stringx = defaults.string(forKey: "Username"){
-                        print(stringx)
                     }
                 }
             }
