@@ -13,13 +13,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        loginButton.layer.cornerRadius = 4
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    @IBAction func temp(_ sender: Any) {
+        let next = self.storyboard?.instantiateViewController(withIdentifier: "MainNavigation")
+        self.present(next!, animated: true, completion: nil)
+    }
+    @IBOutlet weak var loginButton: UIButton!
 }
 

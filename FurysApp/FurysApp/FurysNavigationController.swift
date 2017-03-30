@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InitialNavigationController: UINavigationController {
+class FurysNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
