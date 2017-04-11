@@ -11,9 +11,9 @@
 		BC0AF4281E8ACF2D0045782B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0AF4271E8ACF2D0045782B /* LoginController.swift */; };
 		BC0AF42A1E8AD06A0045782B /* FurysNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0AF4291E8AD06A0045782B /* FurysNavigationController.swift */; };
 		BC0AF42C1E8AD4B80045782B /* SelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0AF42B1E8AD4B80045782B /* SelectionController.swift */; };
-		BC0AF42E1E8AD7CA0045782B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0AF42D1E8AD7CA0045782B /* CircleView.swift */; };
 		BC14481F1E86DB7B00D9D144 /* APIBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC14481E1E86DB7B00D9D144 /* APIBrain.swift */; };
 		BC5694101E8DA182009E81F1 /* HalfCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56940F1E8DA182009E81F1 /* HalfCircleButton.swift */; };
+		BC996AFD1E8EAAC800D10B3C /* BeerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC996AFC1E8EAAC800D10B3C /* BeerTableViewController.swift */; };
 		BCBA10D11E817DE500B8F6AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBA10D01E817DE500B8F6AF /* AppDelegate.swift */; };
 		BCBA10D31E817DE500B8F6AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBA10D21E817DE500B8F6AF /* ViewController.swift */; };
 		BCBA10D61E817DE500B8F6AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCBA10D41E817DE500B8F6AF /* Main.storyboard */; };
@@ -45,10 +45,10 @@
 		BC0AF4271E8ACF2D0045782B /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		BC0AF4291E8AD06A0045782B /* FurysNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FurysNavigationController.swift; sourceTree = "<group>"; };
 		BC0AF42B1E8AD4B80045782B /* SelectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionController.swift; sourceTree = "<group>"; };
-		BC0AF42D1E8AD7CA0045782B /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		BC14481E1E86DB7B00D9D144 /* APIBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIBrain.swift; sourceTree = "<group>"; };
 		BC56940F1E8DA182009E81F1 /* HalfCircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfCircleButton.swift; sourceTree = "<group>"; };
 		BC5E350E1E8D791E005F30FE /* FurysApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FurysApp.entitlements; sourceTree = "<group>"; };
+		BC996AFC1E8EAAC800D10B3C /* BeerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerTableViewController.swift; sourceTree = "<group>"; };
 		BCBA10CD1E817DE500B8F6AF /* FurysApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FurysApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCBA10D01E817DE500B8F6AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCBA10D21E817DE500B8F6AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,8 +124,8 @@
 				BC14481E1E86DB7B00D9D144 /* APIBrain.swift */,
 				BC0AF4231E86FBD50045782B /* RegisterController.swift */,
 				BC0AF4291E8AD06A0045782B /* FurysNavigationController.swift */,
-				BC0AF42D1E8AD7CA0045782B /* CircleView.swift */,
 				BC56940F1E8DA182009E81F1 /* HalfCircleButton.swift */,
+				BC996AFC1E8EAAC800D10B3C /* BeerTableViewController.swift */,
 			);
 			path = FurysApp;
 			sourceTree = "<group>";
@@ -290,7 +290,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC0AF42E1E8AD7CA0045782B /* CircleView.swift in Sources */,
 				BC0AF4241E86FBD50045782B /* RegisterController.swift in Sources */,
 				BC0AF42C1E8AD4B80045782B /* SelectionController.swift in Sources */,
 				BCBA10D31E817DE500B8F6AF /* ViewController.swift in Sources */,
@@ -299,6 +298,7 @@
 				BC14481F1E86DB7B00D9D144 /* APIBrain.swift in Sources */,
 				BC0AF4281E8ACF2D0045782B /* LoginController.swift in Sources */,
 				BC0AF42A1E8AD06A0045782B /* FurysNavigationController.swift in Sources */,
+				BC996AFD1E8EAAC800D10B3C /* BeerTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

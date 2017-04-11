@@ -16,8 +16,9 @@ class HalfCircleButton: UIButton {
     }
     @IBInspectable
     var scale: CGFloat = 0.9
+    
     @IBInspectable
-    var rightSide = true
+    var rightSide = true //This is a workaround so the orientation can be changed in the inspector panel
     
     private var orientation: side {
         if(rightSide){

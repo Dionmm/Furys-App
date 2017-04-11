@@ -40,7 +40,6 @@ class LoginController: UIViewController {
                     } else if responseCode == 400{
                         self.errorLabel.text = data["error_description"] as! String?
                     } else{
-                        print("now")
                         self.errorLabel.text = data["error"] as! String?
                     }
                 }

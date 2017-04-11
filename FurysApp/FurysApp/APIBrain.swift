@@ -38,6 +38,10 @@ class APIBrain {
         request.httpMethod = type
         request.httpBody = data.data(using: String.Encoding.ascii, allowLossyConversion: false)
         
+        if(userLoggedIn){
+            request.addValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
+        }
+        
         //Send request and process response
         let session = URLSession(configuration: URLSessionConfiguration.default)
         let task = session.dataTask(with: request){
@@ -48,16 +52,7 @@ class APIBrain {
                 if let status = response as? HTTPURLResponse{
                     print(status.statusCode)
                     if status.statusCode < 500 {
-                        do{
-                            if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String: Any]{
-                                print("JSON decode succeeded")
-                                callback(json, status.statusCode)
-                            } else {
-                                print("No Json")
-                            }
-                        } catch{
-                            print("JSON decode failed")
-                        }
+                        callback(data!, status.statusCode)
                     } else{
                         print("Something went wrong, please try again")
                         callback(["error": "Server error occurred"], status.statusCode)
@@ -67,6 +62,31 @@ class APIBrain {
         }
         task.resume()
     }
+    
+    var userLoggedIn: Bool {
+        let defaults = UserDefaults.standard
+        if defaults.string(forKey: "username") != nil{
+            let expiryDate = defaults.double(forKey: "tokenExpiryDate")
+            let currentDate = Double(Date().timeIntervalSinceReferenceDate)
+            
+            //Get the expiry date in seconds since 1 Jan 2001 and compare with current date
+            //in seconds from 1 Jan 2001, if < 45,000 (~12 hours) then consider token expired
+            if(expiryDate - currentDate > 45000){
+                authToken = defaults.string(forKey: "authToken")!
+                return true
+            } else{
+                //Delete all saved user data and force relogin
+                defaults.removeObject(forKey: "username")
+                defaults.removeObject(forKey: "authToken")
+                defaults.removeObject(forKey: "tokenExpiryDate")
+            }
+        }
+        return false
+    }
+    
+    
+    var authToken = ""
+    
     
     func loginUser(username: String, password: String, callback: @escaping (Dictionary<String, Any>, Int) -> ()){
         let loginURL = createURL(to: "/token")
@@ -78,6 +98,17 @@ class APIBrain {
         let requestBody = createURLEncode(of: loginDictionary)
         
         createRequest(type: "POST", to: loginURL, with: requestBody){data, responseCode in
+            
+            if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String: Any]{
+                print("JSON decode succeeded")
+                
+            } else {
+                print("No JSON")
+                json["error"] = "Problem decoding JSON"
+            }
+            
+            
+            
             //Check for success and auth token then save authtoken to user defaults
             if let authToken = data["access_token"] {
                 
@@ -90,7 +121,7 @@ class APIBrain {
                 defaults.set(data["userName"], forKey: "username")
                 defaults.set(expiryDate, forKey: "tokenExpiryDate")
             }
-            callback(data, responseCode)
+            callback(json, responseCode)
             
         }
         
@@ -123,4 +154,24 @@ class APIBrain {
         }
         
     }
+
+    func getDrinks(beverageType: String?, callback: @escaping (Dictionary<String, Any>, Int) -> ()){
+        //Swift didn't like doing an If else here with drinksURL, investigate later
+        var drinksURL = createURL(to: "/drink")
+        if beverageType != nil{
+            drinksURL = createURL(to: "/drink?beverageType=\(beverageType!)")
+        }
+    
+        print(drinksURL)
+        
+        createRequest(type: "GET", to: drinksURL, with: ""){ data, responseCode in
+            print(data)
+            print(responseCode)
+            
+            callback(data, responseCode)
+        }
+        
+    
+    }
+    
 }
