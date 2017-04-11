@@ -29,7 +29,7 @@ class APIBrain {
         return encodedString
     }
     
-    private func createRequest(type: String, to url: URL, with data: String, callback: @escaping (Dictionary<String, Any>, Int) -> ()){
+    private func createRequest(type: String, to url: URL, with data: String, callback: @escaping (Data, Int) -> ()){
         var request = URLRequest(url: url)
         
         //Set request parameters
@@ -55,7 +55,7 @@ class APIBrain {
                         callback(data!, status.statusCode)
                     } else{
                         print("Something went wrong, please try again")
-                        callback(["error": "Server error occurred"], status.statusCode)
+                        callback(data!, status.statusCode)
                     }
                 }
             }
@@ -99,32 +99,32 @@ class APIBrain {
         
         createRequest(type: "POST", to: loginURL, with: requestBody){data, responseCode in
             
-            if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String: Any]{
-                print("JSON decode succeeded")
-                
-            } else {
-                print("No JSON")
-                json["error"] = "Problem decoding JSON"
+            do{
+                if let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]{
+                    print("JSON decode succeeded")
+                    //Check for success and auth token then save authtoken to user defaults
+                    if let authToken = json["access_token"] {
+                        
+                        
+                        let expiryDate = self.CalculateExpiryDate(with: (json["expires_in"] as! Double?)!)
+                        
+                        
+                        let defaults = UserDefaults.standard
+                        defaults.set(authToken, forKey: "authToken")
+                        defaults.set(json["userName"], forKey: "username")
+                        defaults.set(expiryDate, forKey: "tokenExpiryDate")
+                    }
+                    callback(json, responseCode)
+                } else {
+                    print("No JSON")
+                    
+                    callback(["error": "Problem decoding JSON"], responseCode)
+                }
+            } catch{
+                print("JSON decode failed")
+                callback(["error": "Problem decoding JSON"], responseCode)
             }
-            
-            
-            
-            //Check for success and auth token then save authtoken to user defaults
-            if let authToken = data["access_token"] {
-                
-                
-                let expiryDate = self.CalculateExpiryDate(with: (data["expires_in"] as! Double?)!)
-                
-                
-                let defaults = UserDefaults.standard
-                defaults.set(authToken, forKey: "authToken")
-                defaults.set(data["userName"], forKey: "username")
-                defaults.set(expiryDate, forKey: "tokenExpiryDate")
-            }
-            callback(json, responseCode)
-            
         }
-        
     }
     
     func CalculateExpiryDate(with expiryTime: Double) -> Double{
@@ -149,7 +149,19 @@ class APIBrain {
         let requestBody = createURLEncode(of: registerDictionary)
         
         createRequest(type: "POST", to: registerURL, with: requestBody){data, responseCode in
-            callback(data, responseCode)
+            do{
+                if let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]{
+                    print("JSON decode succeeded")
+                    callback(json, responseCode)
+                } else {
+                    print("No JSON")
+                    
+                    callback(["error": "Problem decoding JSON"], responseCode)
+                }
+            } catch{
+                print("JSON decode failed")
+                callback(["error": "Problem decoding JSON"], responseCode)
+            }
             
         }
         
@@ -165,13 +177,23 @@ class APIBrain {
         print(drinksURL)
         
         createRequest(type: "GET", to: drinksURL, with: ""){ data, responseCode in
-            print(data)
-            print(responseCode)
-            
-            callback(data, responseCode)
+            do{
+                if let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? Array<Any>{
+                    print("JSON decode succeeded")
+                    
+                    print(json)
+                    
+                    
+                    //callback(json, responseCode)
+                } else {
+                    print("No JSON")
+                    
+                    callback(["error": "Problem decoding JSON"], responseCode)
+                }
+            } catch{
+                print("JSON decode failed")
+                callback(["error": "Problem decoding JSON"], responseCode)
+            }
         }
-        
-    
     }
-    
 }
