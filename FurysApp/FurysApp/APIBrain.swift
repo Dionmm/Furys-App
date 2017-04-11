@@ -167,7 +167,7 @@ class APIBrain {
         
     }
 
-    func getDrinks(beverageType: String?, callback: @escaping (Dictionary<String, Any>, Int) -> ()){
+    func getDrinks(beverageType: String?, callback: @escaping (Array<Dictionary<String, Any>>, Int) -> ()){
         //Swift didn't like doing an If else here with drinksURL, investigate later
         var drinksURL = createURL(to: "/drink")
         if beverageType != nil{
@@ -178,21 +178,18 @@ class APIBrain {
         
         createRequest(type: "GET", to: drinksURL, with: ""){ data, responseCode in
             do{
-                if let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? Array<Any>{
+                if let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? Array<Dictionary<String, Any>>{
                     print("JSON decode succeeded")
                     
-                    print(json)
-                    
-                    
-                    //callback(json, responseCode)
+                    callback(json, responseCode)
                 } else {
                     print("No JSON")
                     
-                    callback(["error": "Problem decoding JSON"], responseCode)
+                    callback([["error": "Problem decoding JSON"]], responseCode)
                 }
             } catch{
                 print("JSON decode failed")
-                callback(["error": "Problem decoding JSON"], responseCode)
+                callback([["error": "Problem decoding JSON"]], responseCode)
             }
         }
     }
