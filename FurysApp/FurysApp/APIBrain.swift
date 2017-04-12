@@ -173,8 +173,6 @@ class APIBrain {
         if beverageType != nil{
             drinksURL = createURL(to: "/drink?beverageType=\(beverageType!)")
         }
-    
-        print(drinksURL)
         
         createRequest(type: "GET", to: drinksURL, with: ""){ data, responseCode in
             do{

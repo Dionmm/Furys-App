@@ -10,15 +10,21 @@ import UIKit
 
 class BeerTableViewController: UITableViewController {
 
+    private var drinks = [Dictionary<String, Any>](){
+        didSet{
+            //print(drinks)
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("Loaded")
         let brain = APIBrain()
         
         brain.getDrinks(beverageType: "spirit"){ data, responseCode in
             print("Data received")
-            
+            self.drinks = data
+            self.tableView.reloadData()
         }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -36,23 +42,27 @@ class BeerTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        print(drinks.count)
+        return drinks.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Drink", for: indexPath)
+        print("HI")
         // Configure the cell...
+        let drink = drinks[indexPath.row]
+        print(drink)
+        if let drinkCell = cell as? DrinksTableViewCell{
+            drinkCell.drink = drink
+        }
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
