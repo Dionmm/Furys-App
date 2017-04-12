@@ -181,7 +181,10 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UM7-Hc-zUP" customClass="HalfCircleButton" customModule="FurysApp" customModuleProvider="target">
                                 <rect key="frame" x="16" y="59" width="171.5" height="559"/>
-                                <state key="normal" title="Beer"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <state key="normal" title="Beer" backgroundImage="beerPic">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="scale">
                                         <real key="value" value="1.8999999999999999"/>
@@ -189,12 +192,15 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rightSide" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="A7g-iE-Gd3" kind="show" id="sGt-oB-sqv"/>
+                                    <segue destination="A7g-iE-Gd3" kind="show" identifier="Beer" id="sGt-oB-sqv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrB-wM-ZIZ" customClass="HalfCircleButton" customModule="FurysApp" customModuleProvider="target">
                                 <rect key="frame" x="187.5" y="59" width="171.5" height="559"/>
-                                <state key="normal" title="Spirit"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <state key="normal" title="Spirit" backgroundImage="spiritPic">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="scale">
                                         <real key="value" value="1.8999999999999999"/>
@@ -202,7 +208,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rightSide" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="fDd-U7-KTz" kind="show" id="7wv-u6-k26"/>
+                                    <segue destination="A7g-iE-Gd3" kind="show" identifier="Spirit" id="WwK-Mb-5vF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -220,81 +226,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NuZ-GG-HnA"/>
+                    <connections>
+                        <outlet property="BeerButton" destination="UM7-Hc-zUP" id="hlY-Ja-fQy"/>
+                        <outlet property="SpiritButton" destination="TrB-wM-ZIZ" id="Jo3-N3-vYn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwM-d1-QKF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2277.5999999999999" y="1398.3508245877063"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="a5A-ts-EZc">
-            <objects>
-                <tableViewController id="fDd-U7-KTz" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="28" sectionFooterHeight="28" id="XPx-fe-pJi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="84" id="MSq-ks-keV" customClass="DrinksTableViewCell" customModule="FurysApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="84"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MSq-ks-keV" id="F1L-01-JqM">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Drink Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3W8-Ep-wT9">
-                                            <rect key="frame" x="8" y="32" width="124" height="21"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJw-yR-meG">
-                                            <rect key="frame" x="260" y="8" width="39" height="21"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpu-at-S4T">
-                                            <rect key="frame" x="240" y="32" width="59" height="21"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDd-PH-4AH">
-                                            <rect key="frame" x="307" y="27" width="60" height="30"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gj6-rv-tvg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                    <state key="normal" title="+"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nog-DU-uvp">
-                                                    <rect key="frame" x="30" y="0.0" width="30" height="30"/>
-                                                    <state key="normal" title="−"/>
-                                                </button>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Gj6-rv-tvg" firstAttribute="leading" secondItem="aJw-yR-meG" secondAttribute="trailing" constant="8" id="DzB-Eu-fbR"/>
-                                        <constraint firstAttribute="topMargin" secondItem="aJw-yR-meG" secondAttribute="top" id="HaG-N2-cCh"/>
-                                        <constraint firstItem="3W8-Ep-wT9" firstAttribute="centerY" secondItem="F1L-01-JqM" secondAttribute="centerY" id="Hgu-eD-XNK"/>
-                                        <constraint firstAttribute="leadingMargin" secondItem="3W8-Ep-wT9" secondAttribute="leading" id="LfC-bt-BSb"/>
-                                        <constraint firstItem="qpu-at-S4T" firstAttribute="top" secondItem="aJw-yR-meG" secondAttribute="bottom" constant="3" id="X9J-jY-x6b"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="aDd-PH-4AH" secondAttribute="trailing" id="oaO-QK-7RL"/>
-                                        <constraint firstItem="Gj6-rv-tvg" firstAttribute="leading" secondItem="qpu-at-S4T" secondAttribute="trailing" constant="8" id="yZ6-Hg-ztz"/>
-                                        <constraint firstItem="aDd-PH-4AH" firstAttribute="top" secondItem="F1L-01-JqM" secondAttribute="topMargin" constant="19" id="yxh-Va-VX6"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="fDd-U7-KTz" id="Sqm-Oj-bGn"/>
-                            <outlet property="delegate" destination="fDd-U7-KTz" id="IXM-6D-MZh"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x8S-41-Kdk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3280.8000000000002" y="1820.2398800599701"/>
         </scene>
         <!--Beer Table View Controller-->
         <scene sceneID="UJ1-wB-3rv">
@@ -318,24 +257,20 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Dk-8G-XuA">
-                                            <rect key="frame" x="247" y="33" width="35" height="18"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIX-OB-732">
-                                            <rect key="frame" x="307" y="15" width="60" height="30"/>
+                                            <rect key="frame" x="307" y="10" width="60" height="40"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ep5-fN-Is3">
-                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <state key="normal" title="+"/>
                                                     <connections>
                                                         <action selector="UpdateCart:" destination="Awg-YV-8qI" eventType="touchUpInside" id="baG-RR-jvW"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGJ-DM-JNC">
-                                                    <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                                                    <rect key="frame" x="30" y="0.0" width="30" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <state key="normal" title="−"/>
                                                     <connections>
                                                         <action selector="UpdateCart:" destination="Awg-YV-8qI" eventType="touchUpInside" id="Q8B-hK-vPE"/>
@@ -343,22 +278,31 @@
                                                 </button>
                                             </subviews>
                                         </stackView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yu5-7o-NP0">
-                                            <rect key="frame" x="236.5" y="8" width="58.5" height="18"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wjj-h6-DGS">
+                                            <rect key="frame" x="237.5" y="8" width="58.5" height="46"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yu5-7o-NP0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="58.5" height="18"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="0.092125669189999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Dk-8G-XuA">
+                                                    <rect key="frame" x="23.5" y="28" width="35" height="18"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="8Dk-8G-XuA" secondAttribute="bottom" id="3cE-Yj-ItB"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="BuF-im-zN3" secondAttribute="leading" id="9p3-zg-2VX"/>
-                                        <constraint firstAttribute="topMargin" secondItem="Yu5-7o-NP0" secondAttribute="top" id="GJ4-mx-NSD"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="yIX-OB-732" secondAttribute="trailing" id="Hrc-el-93f"/>
                                         <constraint firstItem="BuF-im-zN3" firstAttribute="centerY" secondItem="rAs-ga-CmC" secondAttribute="centerY" id="Ivh-Fc-lFH"/>
                                         <constraint firstItem="yIX-OB-732" firstAttribute="centerY" secondItem="rAs-ga-CmC" secondAttribute="centerY" id="Lfe-3d-NvC"/>
-                                        <constraint firstItem="ep5-fN-Is3" firstAttribute="leading" secondItem="8Dk-8G-XuA" secondAttribute="trailing" constant="25" id="Sj8-Z7-6Dj"/>
-                                        <constraint firstItem="ep5-fN-Is3" firstAttribute="leading" secondItem="Yu5-7o-NP0" secondAttribute="trailing" constant="12" id="sUa-Qs-t2j"/>
+                                        <constraint firstItem="wjj-h6-DGS" firstAttribute="centerY" secondItem="rAs-ga-CmC" secondAttribute="centerY" constant="1.5" id="Rcy-QK-Bmm"/>
+                                        <constraint firstItem="ep5-fN-Is3" firstAttribute="leading" secondItem="wjj-h6-DGS" secondAttribute="trailing" constant="11" id="Y1E-Yj-AUJ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -541,5 +485,10 @@
     </scenes>
     <resources>
         <image name="Furys_logo_grey" width="1633" height="905"/>
+        <image name="beerPic" width="1080" height="720"/>
+        <image name="spiritPic" width="1080" height="719"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="WwK-Mb-5vF"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -10,22 +10,35 @@ import UIKit
 
 class BeerTableViewController: UITableViewController {
 
-    private var drinks = [Dictionary<String, Any>](){
-        didSet{
-            //print(drinks)
-        }
+    private var drinks = [Dictionary<String, Any>]()
+    
+    //Pull this out in own file so it's global
+    enum beverageType {
+        case beer
+        case spirit
     }
     
+    var beverageTypeSelected: beverageType = .beer
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let brain = APIBrain()
         
-        brain.getDrinks(beverageType: "spirit"){ data, responseCode in
-            print("Data received")
-            self.drinks = data
-            self.tableView.reloadData()
+        if beverageTypeSelected == .beer{
+            brain.getDrinks(beverageType: "beer"){ data, responseCode in
+                print("Data received")
+                self.drinks = data
+                self.tableView.reloadData()
+            }
+        } else if beverageTypeSelected == .spirit{
+            brain.getDrinks(beverageType: "spirit"){ data, responseCode in
+                print("Data received")
+                self.drinks = data
+                self.tableView.reloadData()
+            }
         }
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -47,16 +60,13 @@ class BeerTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print(drinks.count)
         return drinks.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Drink", for: indexPath)
-        print("HI")
         // Configure the cell...
         let drink = drinks[indexPath.row]
-        print(drink)
         if let drinkCell = cell as? DrinksTableViewCell{
             drinkCell.drink = drink
         }

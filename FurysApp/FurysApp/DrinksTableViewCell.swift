@@ -41,9 +41,12 @@ class DrinksTableViewCell: UITableViewCell {
     }
     
     private func updateUI(){
+        //Grab Anyobject price, convert to double and format to 2 decimal places
+        let drinkPrice = String(format: "%.2f", drink!["Price"] as! Double)
+        
         print("UI Updated")
         DrinkNameLabel?.text = drink?["Name"] as! String?
-        PriceLabel?.text = "£\(drink?["Price"]!)"
+        PriceLabel?.text = "£\(drinkPrice)"
         QuantityLabel?.text = "0"
         
     }

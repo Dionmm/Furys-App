@@ -56,10 +56,21 @@ class HalfCircleButton: UIButton {
         return path
     }
 
+    private var maskPath = UIBezierPath()
     
+    //Credit http://stackoverflow.com/questions/37163850/round-top-corners-of-a-uibutton-in-swift
+    func roundedButton(){
+        maskPath = pathForHalfCentredAtPoint(midPoint: circleCentre, withRadius: circleRadius, half: orientation)
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = self.bounds
+        maskLayer.path = maskPath.cgPath
+        self.layer.mask = maskLayer
+    }
     
+    //This currently doesn't show, find way to put it on top of image
     override func draw(_ rect: CGRect) {
-        UIColor.black.set()
-        pathForHalfCentredAtPoint(midPoint: circleCentre, withRadius: circleRadius, half: orientation).stroke()
+        UIColor.black.setStroke()
+        let result = pathForHalfCentredAtPoint(midPoint: circleCentre, withRadius: circleRadius, half: orientation)
+        result.stroke()
     }
 }
