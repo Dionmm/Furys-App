@@ -76,9 +76,7 @@ class APIBrain {
                 return true
             } else{
                 //Delete all saved user data and force relogin
-                defaults.removeObject(forKey: "username")
-                defaults.removeObject(forKey: "authToken")
-                defaults.removeObject(forKey: "tokenExpiryDate")
+                logoutUser()
             }
         }
         return false
@@ -87,6 +85,12 @@ class APIBrain {
     
     var authToken = ""
     
+    func logoutUser(){
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: "username")
+        defaults.removeObject(forKey: "authToken")
+        defaults.removeObject(forKey: "tokenExpiryDate")
+    }
     
     func loginUser(username: String, password: String, callback: @escaping (Dictionary<String, Any>, Int) -> ()){
         let loginURL = createURL(to: "/token")

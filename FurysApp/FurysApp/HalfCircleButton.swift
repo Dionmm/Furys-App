@@ -72,6 +72,5 @@ class HalfCircleButton: UIButton {
         UIColor.black.setStroke()
         let result = pathForHalfCentredAtPoint(midPoint: circleCentre, withRadius: circleRadius, half: orientation)
         result.stroke()
-        result.fill()
     }
 }

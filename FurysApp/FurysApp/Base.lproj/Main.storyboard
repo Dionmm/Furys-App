@@ -48,30 +48,17 @@
                                     <segue destination="77Q-8P-7AU" kind="show" id="ed4-pV-E6m"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWk-SG-E4M">
-                                <rect key="frame" x="16" y="417" width="313" height="175"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="175" id="6cP-UV-wts"/>
-                                </constraints>
-                                <state key="normal" title="TEMP"/>
-                                <connections>
-                                    <action selector="temp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="46t-T8-RR7"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ADW-k8-tsY" secondAttribute="bottom" constant="435" id="8Ja-z8-Sxo"/>
-                            <constraint firstItem="wWk-SG-E4M" firstAttribute="top" secondItem="ruE-Bp-n3Q" secondAttribute="bottom" constant="8" symbolic="YES" id="Bwk-rd-zD1"/>
                             <constraint firstItem="Yg5-JL-wDM" firstAttribute="centerX" secondItem="ADW-k8-tsY" secondAttribute="centerX" id="KeS-88-qmj"/>
                             <constraint firstItem="ADW-k8-tsY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NJu-uq-NPf"/>
                             <constraint firstItem="ruE-Bp-n3Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="103" id="SVI-Jj-Md0"/>
                             <constraint firstItem="ruE-Bp-n3Q" firstAttribute="centerX" secondItem="Yg5-JL-wDM" secondAttribute="centerX" id="UoK-7j-OAe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wWk-SG-E4M" secondAttribute="trailing" constant="30" id="UoQ-aW-ESu"/>
                             <constraint firstAttribute="leadingMargin" secondItem="ADW-k8-tsY" secondAttribute="leading" id="Zk7-eS-tSI"/>
                             <constraint firstItem="ruE-Bp-n3Q" firstAttribute="top" secondItem="Yg5-JL-wDM" secondAttribute="bottom" constant="21" id="b6L-o2-EkU"/>
                             <constraint firstItem="ADW-k8-tsY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="90" id="cat-4r-umV"/>
-                            <constraint firstItem="wWk-SG-E4M" firstAttribute="leading" secondItem="ADW-k8-tsY" secondAttribute="leading" id="msh-8N-G8T"/>
                             <constraint firstItem="Yg5-JL-wDM" firstAttribute="top" secondItem="ADW-k8-tsY" secondAttribute="bottom" constant="76" id="ySP-4W-q6E"/>
                         </constraints>
                     </view>
@@ -114,7 +101,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vHx-Y6-cqJ">
                                 <rect key="frame" x="87" y="377" width="200" height="40"/>
@@ -198,7 +185,7 @@
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrB-wM-ZIZ" customClass="HalfCircleButton" customModule="FurysApp" customModuleProvider="target">
                                 <rect key="frame" x="187.5" y="59" width="171.5" height="559"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                <state key="normal" title="Spirit">
+                                <state key="normal" title="Spirits">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -352,19 +339,19 @@
                                                 <rect key="frame" x="107" y="265" width="160.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wU4-nN-rRp">
                                                 <rect key="frame" x="107" y="303" width="160.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4on-Hr-ENe">
                                                 <rect key="frame" x="107" y="341" width="160.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                             </textField>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Furys_logo_grey" translatesAutoresizingMaskIntoConstraints="NO" id="h4W-Ey-bdn">
                                                 <rect key="frame" x="97" y="59" width="180" height="120"/>
@@ -373,7 +360,7 @@
                                                 <rect key="frame" x="107.5" y="227" width="160.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -457,17 +444,50 @@
                     </tabBar>
                     <connections>
                         <segue destination="nuE-Je-gaH" kind="relationship" relationship="viewControllers" id="5xZ-Ma-hxG"/>
+                        <segue destination="xC7-GR-1EY" kind="relationship" relationship="viewControllers" id="cVI-9c-h01"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DXi-Nl-iC1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="593" y="1764"/>
         </scene>
+        <!--Account View Controller-->
+        <scene sceneID="lHr-gO-Na5">
+            <objects>
+                <viewController id="xC7-GR-1EY" customClass="AccountViewController" customModule="FurysApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4ZU-1k-jLJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="cue-2l-dNR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bHK-X3-Gc6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtG-DK-e2y">
+                                <rect key="frame" x="103" y="257" width="168" height="153"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="LogOutButton:" destination="xC7-GR-1EY" eventType="touchUpInside" id="ZAH-fh-4mj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="3" systemItem="contacts" id="toe-fV-QOJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tpl-gF-FJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1464.8" y="2142.2788605697151"/>
+        </scene>
         <!--Furys Navigation Controller-->
         <scene sceneID="wII-VU-fAZ">
             <objects>
                 <navigationController storyboardIdentifier="MainNavigation" automaticallyAdjustsScrollViewInsets="NO" id="nuE-Je-gaH" customClass="FurysNavigationController" customModule="FurysApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="KNf-KI-R4s"/>
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="6BL-o8-F9l"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2iZ-pI-zcO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
