@@ -13,9 +13,9 @@ class SelectionController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        beerButton.roundedButton()
-        spiritButton.roundedButton()
-        addImage()
+        //beerButton.roundedButton()
+        //spiritButton.roundedButton()
+        //addImage()
     }
 
     override func didReceiveMemoryWarning() {

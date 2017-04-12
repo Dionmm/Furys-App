@@ -62,7 +62,7 @@ class HalfCircleButton: UIButton {
     func roundedButton(){
         maskPath = pathForHalfCentredAtPoint(midPoint: circleCentre, withRadius: circleRadius, half: orientation)
         let maskLayer = CAShapeLayer()
-        maskLayer.frame = self.bounds
+        maskLayer.frame = bounds
         maskLayer.path = maskPath.cgPath
         self.layer.mask = maskLayer
     }
@@ -72,5 +72,6 @@ class HalfCircleButton: UIButton {
         UIColor.black.setStroke()
         let result = pathForHalfCentredAtPoint(midPoint: circleCentre, withRadius: circleRadius, half: orientation)
         result.stroke()
+        result.fill()
     }
 }
