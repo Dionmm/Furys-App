@@ -10,7 +10,7 @@ import UIKit
 
 class BeerTableViewController: UITableViewController {
 
-    private var drinks = [Dictionary<String, Any>]()
+    private var drinks = [Drink]()
     
     //Pull this out in own file so it's global
     enum beverageType {
@@ -24,21 +24,31 @@ class BeerTableViewController: UITableViewController {
         super.viewDidLoad()
         let brain = APIBrain()
         
+        func alert(){
+            let alert = UIAlertController(title: "Couldn't load drinks", message: "Please try again", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
         if beverageTypeSelected == .beer{
             brain.getDrinks(beverageType: "beer"){ data, responseCode in
-                print("Data received")
-                self.drinks = data
-                self.tableView.reloadData()
+                if data != nil{
+                    self.drinks = data!
+                    self.tableView.reloadData()
+                } else{
+                    alert()
+                }
             }
         } else if beverageTypeSelected == .spirit{
             brain.getDrinks(beverageType: "spirit"){ data, responseCode in
-                print("Data received")
-                self.drinks = data
-                self.tableView.reloadData()
+                if data != nil{
+                    self.drinks = data!
+                    self.tableView.reloadData()
+                } else{
+                    alert()
+                }
             }
         }
-        
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

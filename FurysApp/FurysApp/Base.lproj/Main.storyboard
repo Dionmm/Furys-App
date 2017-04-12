@@ -216,6 +216,8 @@
                     <connections>
                         <outlet property="BeerButton" destination="UM7-Hc-zUP" id="hlY-Ja-fQy"/>
                         <outlet property="SpiritButton" destination="TrB-wM-ZIZ" id="Jo3-N3-vYn"/>
+                        <outlet property="beerButton" destination="UM7-Hc-zUP" id="zOv-qg-3pU"/>
+                        <outlet property="spiritButton" destination="TrB-wM-ZIZ" id="L5t-mm-GNU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwM-d1-QKF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -252,7 +254,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <state key="normal" title="+"/>
                                                     <connections>
-                                                        <action selector="UpdateCart:" destination="Awg-YV-8qI" eventType="touchUpInside" id="baG-RR-jvW"/>
+                                                        <action selector="updateCart:" destination="Awg-YV-8qI" eventType="touchUpInside" id="mYn-On-dEs"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGJ-DM-JNC">
@@ -260,7 +262,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <state key="normal" title="−"/>
                                                     <connections>
-                                                        <action selector="UpdateCart:" destination="Awg-YV-8qI" eventType="touchUpInside" id="Q8B-hK-vPE"/>
+                                                        <action selector="updateCart:" destination="Awg-YV-8qI" eventType="touchUpInside" id="5fM-wM-mVu"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

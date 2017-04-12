@@ -26,29 +26,39 @@ class DrinksTableViewCell: UITableViewCell {
     @IBOutlet weak var PriceLabel: UILabel!
     @IBOutlet weak var DrinkNameLabel: UILabel!
     
-    var drink: [String: Any]? {
-    didSet{
-        updateUI()
-    }
+    var drink: Drink!{
+        didSet{
+            updateUI()
+            drinkId = drink.id
+        }
     }
     
-    @IBAction func UpdateCart(_ sender: UIButton) {
+    var drinkId: String?
+    
+    //Is there a better way than creating a new one of this for every cell? Possibly slow
+    private let brain = APIBrain()
+    
+    @IBAction func updateCart(_ sender: UIButton) {
+        var updateMethod = String()
         if sender.currentTitle == "+" {
-            print("add")
+            updateMethod = "add"
         } else{
-            print("Subtract")
+            updateMethod = "remove"
+        }
+        brain.updateCart(method: updateMethod, with: drinkId!){ result in
+            print(result)
         }
     }
     
     private func updateUI(){
         //Grab Anyobject price, convert to double and format to 2 decimal places
-        let drinkPrice = String(format: "%.2f", drink!["Price"] as! Double)
-        
-        print("UI Updated")
-        DrinkNameLabel?.text = drink?["Name"] as! String?
+        let drinkPrice = String(format: "%.2f", drink.price)
+        DrinkNameLabel?.text = drink.name
         PriceLabel?.text = "£\(drinkPrice)"
-        QuantityLabel?.text = "0"
-        
+        QuantityLabel?.text = ""
     }
     
+    func updateQuantityLabel(with value: Int){
+        QuantityLabel?.text = "\(value)"
+    }
 }

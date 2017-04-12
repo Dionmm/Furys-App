@@ -15,6 +15,8 @@
 		BC5694101E8DA182009E81F1 /* HalfCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56940F1E8DA182009E81F1 /* HalfCircleButton.swift */; };
 		BC75D2111E9D636600B50A42 /* DrinksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC75D2101E9D636600B50A42 /* DrinksTableViewCell.swift */; };
 		BC75D2131E9E848C00B50A42 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC75D2121E9E848C00B50A42 /* AccountViewController.swift */; };
+		BC75D2151E9E900E00B50A42 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC75D2141E9E900E00B50A42 /* Drink.swift */; };
+		BC75D2171E9E915500B50A42 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC75D2161E9E915500B50A42 /* User.swift */; };
 		BC996AFD1E8EAAC800D10B3C /* BeerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC996AFC1E8EAAC800D10B3C /* BeerTableViewController.swift */; };
 		BCBA10D11E817DE500B8F6AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBA10D01E817DE500B8F6AF /* AppDelegate.swift */; };
 		BCBA10D31E817DE500B8F6AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBA10D21E817DE500B8F6AF /* ViewController.swift */; };
@@ -52,6 +54,8 @@
 		BC5E350E1E8D791E005F30FE /* FurysApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FurysApp.entitlements; sourceTree = "<group>"; };
 		BC75D2101E9D636600B50A42 /* DrinksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinksTableViewCell.swift; sourceTree = "<group>"; };
 		BC75D2121E9E848C00B50A42 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		BC75D2141E9E900E00B50A42 /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
+		BC75D2161E9E915500B50A42 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BC996AFC1E8EAAC800D10B3C /* BeerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerTableViewController.swift; sourceTree = "<group>"; };
 		BCBA10CD1E817DE500B8F6AF /* FurysApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FurysApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCBA10D01E817DE500B8F6AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 				BC996AFC1E8EAAC800D10B3C /* BeerTableViewController.swift */,
 				BC75D2101E9D636600B50A42 /* DrinksTableViewCell.swift */,
 				BC75D2121E9E848C00B50A42 /* AccountViewController.swift */,
+				BC75D2141E9E900E00B50A42 /* Drink.swift */,
+				BC75D2161E9E915500B50A42 /* User.swift */,
 			);
 			path = FurysApp;
 			sourceTree = "<group>";
@@ -296,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC75D2171E9E915500B50A42 /* User.swift in Sources */,
 				BC0AF4241E86FBD50045782B /* RegisterController.swift in Sources */,
 				BC0AF42C1E8AD4B80045782B /* SelectionController.swift in Sources */,
 				BCBA10D31E817DE500B8F6AF /* ViewController.swift in Sources */,
@@ -306,6 +313,7 @@
 				BC0AF4281E8ACF2D0045782B /* LoginController.swift in Sources */,
 				BC0AF42A1E8AD06A0045782B /* FurysNavigationController.swift in Sources */,
 				BC996AFD1E8EAAC800D10B3C /* BeerTableViewController.swift in Sources */,
+				BC75D2151E9E900E00B50A42 /* Drink.swift in Sources */,
 				BC75D2131E9E848C00B50A42 /* AccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,7 @@ import Security
 
 class APIBrain {
     var url = "https://api.furysayr.co.uk"
-    
+    var user: User?
     private let grantType = "password" //For ASP Identity when logging in
     
     private func createURL(to appendage: String) -> URL{
@@ -64,19 +64,25 @@ class APIBrain {
     }
     
     var userLoggedIn: Bool {
-        let defaults = UserDefaults.standard
-        if defaults.string(forKey: "username") != nil{
-            let expiryDate = defaults.double(forKey: "tokenExpiryDate")
-            let currentDate = Double(Date().timeIntervalSinceReferenceDate)
-            
-            //Get the expiry date in seconds since 1 Jan 2001 and compare with current date
-            //in seconds from 1 Jan 2001, if < 45,000 (~12 hours) then consider token expired
-            if(expiryDate - currentDate > 45000){
-                authToken = defaults.string(forKey: "authToken")!
-                return true
-            } else{
-                //Delete all saved user data and force relogin
-                logoutUser()
+        //Check if there is a user in user variable, if not then check the defaults where
+        //user details are stored. Otherwise false
+        if user != nil{
+            return true
+        } else{
+            let defaults = UserDefaults.standard
+            if defaults.string(forKey: "username") != nil{
+                let expiryDate = defaults.double(forKey: "tokenExpiryDate")
+                let currentDate = Double(Date().timeIntervalSinceReferenceDate)
+                
+                //Get the expiry date in seconds since 1 Jan 2001 and compare with current date
+                //in seconds from 1 Jan 2001, if < 45,000 (~12 hours) then consider token expired
+                if(expiryDate - currentDate > 45000){
+                    authToken = defaults.string(forKey: "authToken")!
+                    return true
+                } else{
+                    //Delete all saved user data and force relogin
+                    logoutUser()
+                }
             }
         }
         return false
@@ -84,6 +90,22 @@ class APIBrain {
     
     
     var authToken = ""
+    
+    func drinkFactory(with json: [Dictionary<String, Any>]) -> [Drink]{
+        var drinkArray = [Drink]()
+        for item in json{
+            let drink = Drink(
+                id: item["Id"] as! String!,
+                name: item["Name"] as! String!,
+                price: item["Price"] as! Double!,
+                beverageType: item["BeverageType"] as! String!
+            )
+            drinkArray.append(drink)
+        }
+        return drinkArray
+    }
+    
+    
     
     func logoutUser(){
         let defaults = UserDefaults.standard
@@ -171,7 +193,7 @@ class APIBrain {
         
     }
 
-    func getDrinks(beverageType: String?, callback: @escaping (Array<Dictionary<String, Any>>, Int) -> ()){
+    func getDrinks(beverageType: String?, callback: @escaping (Array<Drink>?, Int) -> ()){
         //Swift didn't like doing an If else here with drinksURL, investigate later
         var drinksURL = createURL(to: "/drink")
         if beverageType != nil{
@@ -180,19 +202,47 @@ class APIBrain {
         
         createRequest(type: "GET", to: drinksURL, with: ""){ data, responseCode in
             do{
-                if let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? Array<Dictionary<String, Any>>{
+                if let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [Dictionary<String, Any>]{
                     print("JSON decode succeeded")
                     
-                    callback(json, responseCode)
+                    let drinks = self.drinkFactory(with: json)
+                    
+                    callback(drinks, responseCode)
                 } else {
                     print("No JSON")
                     
-                    callback([["error": "Problem decoding JSON"]], responseCode)
+                    callback(nil, responseCode)
                 }
             } catch{
                 print("JSON decode failed")
-                callback([["error": "Problem decoding JSON"]], responseCode)
+                callback(nil, responseCode)
             }
         }
     }
+    
+    private var updatingCart = false
+    func updateCart(method: String, with drinkId: String, callback: @escaping (Bool) -> ()){
+        if updatingCart == true{
+            callback(false)
+        }
+        
+        let cartURL = createURL(to: "/cart")
+        let requestDictionary = [
+            "drinkId": drinkId
+        ]
+        let requestBody = createURLEncode(of: requestDictionary)
+        var requestType = "POST"
+        if user?.hasBasket == true{
+            requestType = "UPDATE"
+        }
+        createRequest(type: requestType, to: cartURL, with: requestBody){data, responseCode in
+            if responseCode == 200{
+                callback(true)
+            } else{
+                callback(false)
+            }
+        }
+    }
+    
+    
 }
