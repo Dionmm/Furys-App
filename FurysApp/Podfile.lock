@@ -1,0 +1,15 @@
+PODS:
+  - Stripe (10.0.1)
+  - SwiftR (0.13.0)
+
+DEPENDENCIES:
+  - Stripe
+  - SwiftR
+
+SPEC CHECKSUMS:
+  Stripe: dd6df0e2c6a8463e2f1ca9b15dc246e5ae1eee64
+  SwiftR: 340a0c3c6d665e8f243e4b57c8121e0d81f3a345
+
+PODFILE CHECKSUM: 27b2b664412c8563d4fd2946a1ddcc57ef42f2cc
+
+COCOAPODS: 1.2.1

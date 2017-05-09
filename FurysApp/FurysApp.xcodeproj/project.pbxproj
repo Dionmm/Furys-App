@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0349D7D2BFE01710DFA0DA06 /* Pods_FurysApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E097DC9C2A91D735B1CC10A /* Pods_FurysApp.framework */; };
 		BC0AF4241E86FBD50045782B /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0AF4231E86FBD50045782B /* RegisterController.swift */; };
 		BC0AF4281E8ACF2D0045782B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0AF4271E8ACF2D0045782B /* LoginController.swift */; };
 		BC0AF42A1E8AD06A0045782B /* FurysNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0AF4291E8AD06A0045782B /* FurysNavigationController.swift */; };
@@ -17,6 +18,8 @@
 		BC75D2131E9E848C00B50A42 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC75D2121E9E848C00B50A42 /* AccountViewController.swift */; };
 		BC75D2151E9E900E00B50A42 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC75D2141E9E900E00B50A42 /* Drink.swift */; };
 		BC75D2171E9E915500B50A42 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC75D2161E9E915500B50A42 /* User.swift */; };
+		BC866E5A1EC23E9700195C05 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC866E591EC23E9700195C05 /* CheckoutViewController.swift */; };
+		BC866E5C1EC23EB100195C05 /* OrderTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC866E5B1EC23EB100195C05 /* OrderTrackingViewController.swift */; };
 		BC996AFD1E8EAAC800D10B3C /* BeerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC996AFC1E8EAAC800D10B3C /* BeerTableViewController.swift */; };
 		BCBA10D11E817DE500B8F6AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBA10D01E817DE500B8F6AF /* AppDelegate.swift */; };
 		BCBA10D31E817DE500B8F6AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBA10D21E817DE500B8F6AF /* ViewController.swift */; };
@@ -25,6 +28,8 @@
 		BCBA10DB1E817DE500B8F6AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCBA10D91E817DE500B8F6AF /* LaunchScreen.storyboard */; };
 		BCBA10E61E817DE500B8F6AF /* FurysAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBA10E51E817DE500B8F6AF /* FurysAppTests.swift */; };
 		BCBA10F11E817DE500B8F6AF /* FurysAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBA10F01E817DE500B8F6AF /* FurysAppUITests.swift */; };
+		D49D94573BD27AF148B748B2 /* Pods_FurysAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D9F4B4CDCB3088B3739821 /* Pods_FurysAppTests.framework */; };
+		E6B4EB6E297523539260C916 /* Pods_FurysAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E92D26251F3D3A0BD07125 /* Pods_FurysAppUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25D9F4B4CDCB3088B3739821 /* Pods_FurysAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FurysAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E097DC9C2A91D735B1CC10A /* Pods_FurysApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FurysApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46CDFBC9F031635764BEFB34 /* Pods-FurysAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FurysAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FurysAppUITests/Pods-FurysAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8A4A3796D8C9761BCFC0CB39 /* Pods-FurysAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FurysAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FurysAppTests/Pods-FurysAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B971A787DC2591E57D18366C /* Pods-FurysApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FurysApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FurysApp/Pods-FurysApp.release.xcconfig"; sourceTree = "<group>"; };
 		BC0AF4231E86FBD50045782B /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		BC0AF4271E8ACF2D0045782B /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		BC0AF4291E8AD06A0045782B /* FurysNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FurysNavigationController.swift; sourceTree = "<group>"; };
@@ -56,6 +66,8 @@
 		BC75D2121E9E848C00B50A42 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		BC75D2141E9E900E00B50A42 /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		BC75D2161E9E915500B50A42 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BC866E591EC23E9700195C05 /* CheckoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckoutViewController.swift; path = ../CheckoutViewController.swift; sourceTree = "<group>"; };
+		BC866E5B1EC23EB100195C05 /* OrderTrackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderTrackingViewController.swift; path = ../OrderTrackingViewController.swift; sourceTree = "<group>"; };
 		BC996AFC1E8EAAC800D10B3C /* BeerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerTableViewController.swift; sourceTree = "<group>"; };
 		BCBA10CD1E817DE500B8F6AF /* FurysApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FurysApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCBA10D01E817DE500B8F6AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +82,10 @@
 		BCBA10EC1E817DE500B8F6AF /* FurysAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FurysAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCBA10F01E817DE500B8F6AF /* FurysAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurysAppUITests.swift; sourceTree = "<group>"; };
 		BCBA10F21E817DE500B8F6AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C173DDF1F103A464CC81A33D /* Pods-FurysAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FurysAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FurysAppTests/Pods-FurysAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		D6E92D26251F3D3A0BD07125 /* Pods_FurysAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FurysAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5FEB6DF2191C39BB388C171 /* Pods-FurysAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FurysAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FurysAppUITests/Pods-FurysAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E7244C075601A709AFD76365 /* Pods-FurysApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FurysApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FurysApp/Pods-FurysApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0349D7D2BFE01710DFA0DA06 /* Pods_FurysApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D49D94573BD27AF148B748B2 /* Pods_FurysAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,12 +109,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6B4EB6E297523539260C916 /* Pods_FurysAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D3499AC4BF9DAF11311ADAC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E7244C075601A709AFD76365 /* Pods-FurysApp.debug.xcconfig */,
+				B971A787DC2591E57D18366C /* Pods-FurysApp.release.xcconfig */,
+				8A4A3796D8C9761BCFC0CB39 /* Pods-FurysAppTests.debug.xcconfig */,
+				C173DDF1F103A464CC81A33D /* Pods-FurysAppTests.release.xcconfig */,
+				E5FEB6DF2191C39BB388C171 /* Pods-FurysAppUITests.debug.xcconfig */,
+				46CDFBC9F031635764BEFB34 /* Pods-FurysAppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8526EC89C95F8A6287391300 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E097DC9C2A91D735B1CC10A /* Pods_FurysApp.framework */,
+				25D9F4B4CDCB3088B3739821 /* Pods_FurysAppTests.framework */,
+				D6E92D26251F3D3A0BD07125 /* Pods_FurysAppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BCBA10C41E817DE500B8F6AF = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +146,8 @@
 				BCBA10E41E817DE500B8F6AF /* FurysAppTests */,
 				BCBA10EF1E817DE500B8F6AF /* FurysAppUITests */,
 				BCBA10CE1E817DE500B8F6AF /* Products */,
+				7D3499AC4BF9DAF11311ADAC /* Pods */,
+				8526EC89C95F8A6287391300 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +180,8 @@
 				BC996AFC1E8EAAC800D10B3C /* BeerTableViewController.swift */,
 				BC75D2101E9D636600B50A42 /* DrinksTableViewCell.swift */,
 				BC75D2121E9E848C00B50A42 /* AccountViewController.swift */,
+				BC866E5B1EC23EB100195C05 /* OrderTrackingViewController.swift */,
+				BC866E591EC23E9700195C05 /* CheckoutViewController.swift */,
 				BC75D2141E9E900E00B50A42 /* Drink.swift */,
 				BC75D2161E9E915500B50A42 /* User.swift */,
 			);
@@ -167,9 +213,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCBA10F51E817DE500B8F6AF /* Build configuration list for PBXNativeTarget "FurysApp" */;
 			buildPhases = (
+				2C6B30DE7A62C8B6E1B1F7DA /* [CP] Check Pods Manifest.lock */,
 				BCBA10C91E817DE500B8F6AF /* Sources */,
 				BCBA10CA1E817DE500B8F6AF /* Frameworks */,
 				BCBA10CB1E817DE500B8F6AF /* Resources */,
+				6121AE7531D9AF4C8F84A18B /* [CP] Embed Pods Frameworks */,
+				D81EE8C7242EAC808C6A1A57 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,9 +233,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCBA10F81E817DE500B8F6AF /* Build configuration list for PBXNativeTarget "FurysAppTests" */;
 			buildPhases = (
+				D43B478B61F90914D8908E75 /* [CP] Check Pods Manifest.lock */,
 				BCBA10DD1E817DE500B8F6AF /* Sources */,
 				BCBA10DE1E817DE500B8F6AF /* Frameworks */,
 				BCBA10DF1E817DE500B8F6AF /* Resources */,
+				5F5CCB6F63E20755593F7686 /* [CP] Embed Pods Frameworks */,
+				149039967C30F81564C6AF72 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,9 +254,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCBA10FB1E817DE500B8F6AF /* Build configuration list for PBXNativeTarget "FurysAppUITests" */;
 			buildPhases = (
+				99B10B678173DDE2D1493879 /* [CP] Check Pods Manifest.lock */,
 				BCBA10E81E817DE500B8F6AF /* Sources */,
 				BCBA10E91E817DE500B8F6AF /* Frameworks */,
 				BCBA10EA1E817DE500B8F6AF /* Resources */,
+				704770E3313DA9FCBEC853E0 /* [CP] Embed Pods Frameworks */,
+				1986FEBAB5928A9BB417AA44 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -297,6 +352,144 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		149039967C30F81564C6AF72 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FurysAppTests/Pods-FurysAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1986FEBAB5928A9BB417AA44 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FurysAppUITests/Pods-FurysAppUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C6B30DE7A62C8B6E1B1F7DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5F5CCB6F63E20755593F7686 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FurysAppTests/Pods-FurysAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6121AE7531D9AF4C8F84A18B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FurysApp/Pods-FurysApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		704770E3313DA9FCBEC853E0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FurysAppUITests/Pods-FurysAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99B10B678173DDE2D1493879 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D43B478B61F90914D8908E75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D81EE8C7242EAC808C6A1A57 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FurysApp/Pods-FurysApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BCBA10C91E817DE500B8F6AF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -308,11 +501,13 @@
 				BCBA10D31E817DE500B8F6AF /* ViewController.swift in Sources */,
 				BCBA10D11E817DE500B8F6AF /* AppDelegate.swift in Sources */,
 				BC5694101E8DA182009E81F1 /* HalfCircleButton.swift in Sources */,
+				BC866E5A1EC23E9700195C05 /* CheckoutViewController.swift in Sources */,
 				BC14481F1E86DB7B00D9D144 /* APIBrain.swift in Sources */,
 				BC75D2111E9D636600B50A42 /* DrinksTableViewCell.swift in Sources */,
 				BC0AF4281E8ACF2D0045782B /* LoginController.swift in Sources */,
 				BC0AF42A1E8AD06A0045782B /* FurysNavigationController.swift in Sources */,
 				BC996AFD1E8EAAC800D10B3C /* BeerTableViewController.swift in Sources */,
+				BC866E5C1EC23EB100195C05 /* OrderTrackingViewController.swift in Sources */,
 				BC75D2151E9E900E00B50A42 /* Drink.swift in Sources */,
 				BC75D2131E9E848C00B50A42 /* AccountViewController.swift in Sources */,
 			);
@@ -464,6 +659,7 @@
 		};
 		BCBA10F61E817DE500B8F6AF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7244C075601A709AFD76365 /* Pods-FurysApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JZAA8RECCB;
@@ -477,6 +673,7 @@
 		};
 		BCBA10F71E817DE500B8F6AF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B971A787DC2591E57D18366C /* Pods-FurysApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JZAA8RECCB;
@@ -490,6 +687,7 @@
 		};
 		BCBA10F91E817DE500B8F6AF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A4A3796D8C9761BCFC0CB39 /* Pods-FurysAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -505,6 +703,7 @@
 		};
 		BCBA10FA1E817DE500B8F6AF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C173DDF1F103A464CC81A33D /* Pods-FurysAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -520,6 +719,7 @@
 		};
 		BCBA10FC1E817DE500B8F6AF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5FEB6DF2191C39BB388C171 /* Pods-FurysAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = JZAA8RECCB;
@@ -534,6 +734,7 @@
 		};
 		BCBA10FD1E817DE500B8F6AF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46CDFBC9F031635764BEFB34 /* Pods-FurysAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = JZAA8RECCB;

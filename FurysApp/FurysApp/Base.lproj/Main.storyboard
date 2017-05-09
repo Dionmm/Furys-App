@@ -167,7 +167,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UM7-Hc-zUP" customClass="HalfCircleButton" customModule="FurysApp" customModuleProvider="target">
-                                <rect key="frame" x="16" y="59" width="171.5" height="559"/>
+                                <rect key="frame" x="16" y="59" width="171.5" height="564"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <state key="normal" title="Beer">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -183,7 +183,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrB-wM-ZIZ" customClass="HalfCircleButton" customModule="FurysApp" customModuleProvider="target">
-                                <rect key="frame" x="187.5" y="59" width="171.5" height="559"/>
+                                <rect key="frame" x="187.5" y="59" width="171.5" height="564"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <state key="normal" title="Spirits">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -237,7 +237,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Awg-YV-8qI" id="rAs-ga-CmC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drink Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BuF-im-zN3">
@@ -447,13 +447,14 @@
                     <connections>
                         <segue destination="nuE-Je-gaH" kind="relationship" relationship="viewControllers" id="5xZ-Ma-hxG"/>
                         <segue destination="xC7-GR-1EY" kind="relationship" relationship="viewControllers" id="cVI-9c-h01"/>
+                        <segue destination="TFa-iM-Av9" kind="relationship" relationship="viewControllers" id="7ch-tQ-r1m"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DXi-Nl-iC1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="593" y="1764"/>
         </scene>
-        <!--Account View Controller-->
+        <!--Profile-->
         <scene sceneID="lHr-gO-Na5">
             <objects>
                 <viewController id="xC7-GR-1EY" customClass="AccountViewController" customModule="FurysApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -479,23 +480,79 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="3" systemItem="contacts" id="toe-fV-QOJ"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="Profile" id="toe-fV-QOJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tpl-gF-FJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1464.8" y="2142.2788605697151"/>
+            <point key="canvasLocation" x="593" y="2496"/>
         </scene>
-        <!--Furys Navigation Controller-->
+        <!--Order Tracking View Controller-->
+        <scene sceneID="oMk-DP-lRq">
+            <objects>
+                <viewController id="2Tg-Zw-jv8" customClass="OrderTrackingViewController" customModule="FurysApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PJG-2i-Dka"/>
+                        <viewControllerLayoutGuide type="bottom" id="akQ-y4-D1B"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WJJ-Bd-SgB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QWj-Op-vHc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sUy-Fd-FFF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2404" y="3191.1544227886061"/>
+        </scene>
+        <!--Checkout View Controller-->
+        <scene sceneID="Rwq-QH-LMU">
+            <objects>
+                <viewController id="BuJ-RJ-nin" customClass="CheckoutViewController" customModule="FurysApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d3D-ll-fQb"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Wm-IG-INm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qVz-M1-Ilc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T78-mM-Su1">
+                                <rect key="frame" x="119" y="270" width="136" height="126"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="applePay:" destination="BuJ-RJ-nin" eventType="touchUpInside" id="Qaa-9d-Df0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="V9G-HT-n3N"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XPj-46-3rP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2277.5999999999999" y="2177.3613193403298"/>
+        </scene>
+        <!--Drinks-->
         <scene sceneID="wII-VU-fAZ">
             <objects>
-                <navigationController storyboardIdentifier="MainNavigation" automaticallyAdjustsScrollViewInsets="NO" id="nuE-Je-gaH" customClass="FurysNavigationController" customModule="FurysApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="6BL-o8-F9l"/>
-                    <toolbarItems/>
+                <navigationController storyboardIdentifier="MainNavigation" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="nuE-Je-gaH" customClass="FurysNavigationController" customModule="FurysApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Drinks" id="6BL-o8-F9l"/>
+                    <toolbarItems>
+                        <barButtonItem title="Checkout" width="359" style="plain" id="hhK-67-QUS">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2iZ-pI-zcO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Bbk-vc-H34">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="eMw-gv-4Ly" kind="relationship" relationship="rootViewController" id="YvA-Yk-pUf"/>
                     </connections>
@@ -503,6 +560,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slI-ET-JB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1465" y="1400"/>
+        </scene>
+        <!--Checkout-->
+        <scene sceneID="tH9-SH-470">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TFa-iM-Av9" customClass="FurysNavigationController" customModule="FurysApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Checkout" id="Gwh-uv-XZX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="utA-7g-UcX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BuJ-RJ-nin" kind="relationship" relationship="rootViewController" id="3lF-w0-AEm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q24-ra-ymh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1465" y="2179"/>
+        </scene>
+        <!--Furys Navigation Controller-->
+        <scene sceneID="7J0-oz-Kar">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2om-5I-DQa" customClass="FurysNavigationController" customModule="FurysApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4BP-zl-a14">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2Tg-Zw-jv8" kind="relationship" relationship="rootViewController" id="t3P-Sx-DA9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NDT-XY-xGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1464.8" y="3190.2548725637184"/>
         </scene>
     </scenes>
     <resources>

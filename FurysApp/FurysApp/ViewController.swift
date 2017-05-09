@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         loginButton.layer.cornerRadius = 4
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         let userLoggedIn = APIBrain().userLoggedIn

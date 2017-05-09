@@ -30,11 +30,17 @@ class BeerTableViewController: UITableViewController {
             self.present(alert, animated: true, completion: nil)
         }
         
+        func reload(){
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
         if beverageTypeSelected == .beer{
             brain.getDrinks(beverageType: "beer"){ data, responseCode in
                 if data != nil{
                     self.drinks = data!
-                    self.tableView.reloadData()
+                    reload()
                 } else{
                     alert()
                 }
@@ -43,7 +49,7 @@ class BeerTableViewController: UITableViewController {
             brain.getDrinks(beverageType: "spirit"){ data, responseCode in
                 if data != nil{
                     self.drinks = data!
-                    self.tableView.reloadData()
+                    reload()
                 } else{
                     alert()
                 }

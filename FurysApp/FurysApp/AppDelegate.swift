@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UIApplication.shared.statusBarStyle = .lightContent
+        STPPaymentConfiguration.shared().publishableKey = "pk_test_QkwPXLR7sJdFBJTBRU6xd7Yi"
+        STPPaymentConfiguration.shared().appleMerchantIdentifier = "merchant.com.Dionmm.FurysApp"
         return true
     }
 
