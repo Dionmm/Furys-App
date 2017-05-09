@@ -27,7 +27,7 @@ class LoginController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     
     @IBAction func loginButton(_ sender: UIButton) {
-        let x = APIBrain()
+        let x = APIBrain.shared
         if !(email.text?.isEmpty)! && !(password.text?.isEmpty)!{
             x.loginUser(username: email.text!, password: password.text!){ data, responseCode in
                 //Cannot update UI on anything other than the main thread

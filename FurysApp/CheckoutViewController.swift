@@ -9,7 +9,7 @@
 import UIKit
 import Stripe
 
-class CheckoutViewController: UIViewController, PKPaymentAuthorizationViewControllerDelegate {
+class CheckoutViewController: UIViewController, PKPaymentAuthorizationViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,7 @@ class CheckoutViewController: UIViewController, PKPaymentAuthorizationViewContro
     }
     
     var paymentSucceeded = false
+    var brain = APIBrain.shared
     
     func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController,
                                             didAuthorizePayment payment: PKPayment, completion: @escaping (PKPaymentAuthorizationStatus) -> Void) {
@@ -43,18 +44,21 @@ class CheckoutViewController: UIViewController, PKPaymentAuthorizationViewContro
             //payemtn succeeded
             if (self.paymentSucceeded) {
                 // show a receipt page
+                let next = self.storyboard?.instantiateViewController(withIdentifier: "TrackOrder")
+                self.present(next!, animated: true, completion: nil)
             }
         })
     }
     
     
+    @IBOutlet weak var basketContentsTable: UITableView!
     
     @IBAction func applePay(_ sender: UIButton) {
+        let x = self.parent as! FurysNavigationController
+        
+        print(x.brain.basket)
         let paymentRequest = Stripe.paymentRequest(withMerchantIdentifier: "merchant.com.Dionmm.FurysApp")
-        paymentRequest.paymentSummaryItems = [
-            PKPaymentSummaryItem(label: "Vokda coke", amount: 5.00),
-            PKPaymentSummaryItem(label: "Vokda Lemonade", amount: 5.00)
-        ]
+        paymentRequest.paymentSummaryItems = calcTotalCost()
         if Stripe.canSubmitPaymentRequest(paymentRequest){
             let paymentAuthorisationVC = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest)
             paymentAuthorisationVC.delegate = self
@@ -62,6 +66,35 @@ class CheckoutViewController: UIViewController, PKPaymentAuthorizationViewContro
             
         }
     }
+    
+    private func calcTotalCost() -> [PKPaymentSummaryItem]{
+        var itemArray = [PKPaymentSummaryItem]()
+        var totalCost = 0.0
+        
+        for drink in brain.basket{
+            totalCost += drink.price
+        }
+        itemArray.append(PKPaymentSummaryItem(label: "Furys Ayr", amount: NSDecimalNumber(value: totalCost)))
+        return itemArray
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "basketCell", for: indexPath)
+//        // Configure the cell...
+//        let drink = drinks[indexPath.row]
+//        if let drinkCell = cell as? DrinksTableViewCell{
+//            drinkCell.drink = drink
+//            drinkCell.parentNavController = self.parent as! FurysNavigationController!
+//        }
+        //let cell = UITableViewCell(style: .default, reuseIdentifier: "basketCell")
+        return cell
+    }
+
     /*
     // MARK: - Navigation
 

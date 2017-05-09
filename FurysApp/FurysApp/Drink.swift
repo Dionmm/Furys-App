@@ -8,9 +8,13 @@
 
 import Foundation
 
-struct Drink {
+struct Drink: Equatable {
     var id: String
     var name: String
     var price: Double
     var beverageType: String
+    
+    static func == (lhs: Drink, rhs: Drink) -> Bool{
+        return lhs.id == rhs.id
+    }
 }

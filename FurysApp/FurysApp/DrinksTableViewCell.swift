@@ -35,8 +35,13 @@ class DrinksTableViewCell: UITableViewCell {
     
     var drinkId: String?
     
-    //Is there a better way than creating a new one of this for every cell? Possibly slow
-    private let brain = APIBrain()
+    var parentNavController: FurysNavigationController!{
+        didSet{
+            brain = parentNavController.brain
+        }
+    }
+    
+    var brain = APIBrain.shared
     
     @IBAction func updateCart(_ sender: UIButton) {
         var updateMethod = String()
@@ -45,7 +50,8 @@ class DrinksTableViewCell: UITableViewCell {
         } else{
             updateMethod = "remove"
         }
-        brain.updateCart(method: updateMethod, with: drinkId!){ result in
+        
+        brain.updateCart(method: updateMethod, with: drink){ result in
             print(result)
         }
     }

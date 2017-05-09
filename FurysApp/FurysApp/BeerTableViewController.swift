@@ -22,7 +22,7 @@ class BeerTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let brain = APIBrain()
+        let brain = APIBrain.shared
         
         func alert(){
             let alert = UIAlertController(title: "Couldn't load drinks", message: "Please try again", preferredStyle: UIAlertControllerStyle.alert)
@@ -85,6 +85,7 @@ class BeerTableViewController: UITableViewController {
         let drink = drinks[indexPath.row]
         if let drinkCell = cell as? DrinksTableViewCell{
             drinkCell.drink = drink
+            drinkCell.parentNavController = self.parent as! FurysNavigationController!
         }
 
         return cell

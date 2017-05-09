@@ -10,8 +10,17 @@ import Foundation
 import Security
 
 class APIBrain {
+    
+    private init(){
+        
+    }
+    
+    static let shared = APIBrain()
+    
     var url = "https://api.furysayr.co.uk"
     var user: User?
+    var basket = [Drink]()
+    
     private let grantType = "password" //For ASP Identity when logging in
     
     private func createURL(to appendage: String) -> URL{
@@ -221,28 +230,42 @@ class APIBrain {
     }
     
     private var updatingCart = false
-    func updateCart(method: String, with drinkId: String, callback: @escaping (Bool) -> ()){
-        if updatingCart == true{
-            callback(false)
-        }
-        
-        let cartURL = createURL(to: "/cart")
-        let requestDictionary = [
-            "drinkId": drinkId
-        ]
-        let requestBody = createURLEncode(of: requestDictionary)
-        var requestType = "POST"
-        if user?.hasBasket == true{
-            requestType = "UPDATE"
-        }
-        createRequest(type: requestType, to: cartURL, with: requestBody){data, responseCode in
-            if responseCode == 200{
-                callback(true)
-            } else{
-                callback(false)
+    func updateCart(method: String, with drink: Drink, callback: @escaping (Bool) -> ()){
+        if method == "add" {
+            basket.append(drink)
+            print(basket)
+        } else{
+            if let index = basket.index(of: drink){
+                print(index)
+                basket.remove(at: index)
+                print(basket)
             }
         }
+        print()
+        
+//        if updatingCart == true{
+//            callback(false)
+//        }
+//        
+//        let cartURL = createURL(to: "/cart")
+//        let requestDictionary = [
+//            "drinkId": drinkId
+//        ]
+//        let requestBody = createURLEncode(of: requestDictionary)
+//        var requestType = "POST"
+//        if user?.hasBasket == true{
+//            requestType = "UPDATE"
+//        }
+//        createRequest(type: requestType, to: cartURL, with: requestBody){data, responseCode in
+//            if responseCode == 200{
+//                callback(true)
+//            } else{
+//                callback(false)
+//            }
+//        }
     }
     
-    
+//    func createOrder(token: String, callback: @escaping (Dictionary<String, Any>)){
+//        
+//    }
 }

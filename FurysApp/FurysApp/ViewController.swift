@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        let userLoggedIn = APIBrain().userLoggedIn
+        let userLoggedIn = APIBrain.shared.userLoggedIn
         if userLoggedIn{
             print("Logged In")
             let next = self.storyboard?.instantiateViewController(withIdentifier: "MainTabController")

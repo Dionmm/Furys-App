@@ -22,7 +22,7 @@ class AccountViewController: UIViewController {
     }
     
     @IBAction func LogOutButton(_ sender: UIButton) {
-        let brain = APIBrain()
+        let brain = APIBrain.shared
         brain.logoutUser()
         let next = self.storyboard?.instantiateViewController(withIdentifier: "InitialNavigation")
         self.present(next!, animated: true, completion: nil)

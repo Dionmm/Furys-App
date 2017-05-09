@@ -48,7 +48,7 @@ class RegisterController: UIViewController {
     @IBOutlet weak var confirmPassword: UITextField!
     
     @IBAction func register(_ sender: UIButton) {
-        let brain = APIBrain()
+        let brain = APIBrain.shared
         if !(username.text?.isEmpty)! && !(email.text?.isEmpty)! && !(password.text?.isEmpty)! && (password.text! == confirmPassword.text!){
             brain.registerUser(username: username.text!, password: password.text!, email: email.text!){data in
                 print(data)
