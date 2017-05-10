@@ -29,6 +29,7 @@
 		BCBA10DB1E817DE500B8F6AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCBA10D91E817DE500B8F6AF /* LaunchScreen.storyboard */; };
 		BCBA10E61E817DE500B8F6AF /* FurysAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBA10E51E817DE500B8F6AF /* FurysAppTests.swift */; };
 		BCBA10F11E817DE500B8F6AF /* FurysAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBA10F01E817DE500B8F6AF /* FurysAppUITests.swift */; };
+		BCC6B4961EC3488600B825D3 /* BasketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC6B4951EC3488600B825D3 /* BasketTableViewCell.swift */; };
 		D49D94573BD27AF148B748B2 /* Pods_FurysAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D9F4B4CDCB3088B3739821 /* Pods_FurysAppTests.framework */; };
 		E6B4EB6E297523539260C916 /* Pods_FurysAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E92D26251F3D3A0BD07125 /* Pods_FurysAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		BCBA10EC1E817DE500B8F6AF /* FurysAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FurysAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCBA10F01E817DE500B8F6AF /* FurysAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurysAppUITests.swift; sourceTree = "<group>"; };
 		BCBA10F21E817DE500B8F6AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCC6B4951EC3488600B825D3 /* BasketTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketTableViewCell.swift; sourceTree = "<group>"; };
 		C173DDF1F103A464CC81A33D /* Pods-FurysAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FurysAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FurysAppTests/Pods-FurysAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		D6E92D26251F3D3A0BD07125 /* Pods_FurysAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FurysAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5FEB6DF2191C39BB388C171 /* Pods-FurysAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FurysAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FurysAppUITests/Pods-FurysAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				BC75D2141E9E900E00B50A42 /* Drink.swift */,
 				BC75D2161E9E915500B50A42 /* User.swift */,
 				BC866E5D1EC254E300195C05 /* FurysTabController.swift */,
+				BCC6B4951EC3488600B825D3 /* BasketTableViewCell.swift */,
 			);
 			path = FurysApp;
 			sourceTree = "<group>";
@@ -286,11 +289,11 @@
 				TargetAttributes = {
 					BCBA10CC1E817DE500B8F6AF = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = JZAA8RECCB;
+						DevelopmentTeam = 5MB4R9972N;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplePay = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -506,6 +509,7 @@
 				BC5694101E8DA182009E81F1 /* HalfCircleButton.swift in Sources */,
 				BC866E5A1EC23E9700195C05 /* CheckoutViewController.swift in Sources */,
 				BC866E5E1EC254E300195C05 /* FurysTabController.swift in Sources */,
+				BCC6B4961EC3488600B825D3 /* BasketTableViewCell.swift in Sources */,
 				BC14481F1E86DB7B00D9D144 /* APIBrain.swift in Sources */,
 				BC75D2111E9D636600B50A42 /* DrinksTableViewCell.swift in Sources */,
 				BC0AF4281E8ACF2D0045782B /* LoginController.swift in Sources */,
@@ -666,10 +670,11 @@
 			baseConfigurationReference = E7244C075601A709AFD76365 /* Pods-FurysApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JZAA8RECCB;
+				CODE_SIGN_ENTITLEMENTS = FurysApp/FurysApp.entitlements;
+				DEVELOPMENT_TEAM = 5MB4R9972N;
 				INFOPLIST_FILE = FurysApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Dionmm.FurysApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dionmm.FurysApp2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -680,10 +685,11 @@
 			baseConfigurationReference = B971A787DC2591E57D18366C /* Pods-FurysApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JZAA8RECCB;
+				CODE_SIGN_ENTITLEMENTS = FurysApp/FurysApp.entitlements;
+				DEVELOPMENT_TEAM = 5MB4R9972N;
 				INFOPLIST_FILE = FurysApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Dionmm.FurysApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dionmm.FurysApp2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

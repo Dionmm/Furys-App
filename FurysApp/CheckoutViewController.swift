@@ -58,7 +58,10 @@ class CheckoutViewController: UIViewController, PKPaymentAuthorizationViewContro
         
         print(x.brain.basket)
         let paymentRequest = Stripe.paymentRequest(withMerchantIdentifier: "merchant.com.Dionmm.FurysApp")
+        paymentRequest.countryCode = "GB"
+        paymentRequest.currencyCode = "GBP"
         paymentRequest.paymentSummaryItems = calcTotalCost()
+        print(Stripe.canSubmitPaymentRequest(paymentRequest))
         if Stripe.canSubmitPaymentRequest(paymentRequest){
             let paymentAuthorisationVC = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest)
             paymentAuthorisationVC.delegate = self
@@ -80,18 +83,17 @@ class CheckoutViewController: UIViewController, PKPaymentAuthorizationViewContro
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return brain.basket.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "basketCell", for: indexPath)
-//        // Configure the cell...
-//        let drink = drinks[indexPath.row]
-//        if let drinkCell = cell as? DrinksTableViewCell{
-//            drinkCell.drink = drink
-//            drinkCell.parentNavController = self.parent as! FurysNavigationController!
-//        }
-        //let cell = UITableViewCell(style: .default, reuseIdentifier: "basketCell")
+        
+        let drink = brain.basket[indexPath.row]
+        if let drinkCell = cell as? BasketTableViewCell{
+            drinkCell.drink = drink
+        }
+        
         return cell
     }
 

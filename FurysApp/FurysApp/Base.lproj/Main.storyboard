@@ -76,7 +76,7 @@
         <!--Login Controller-->
         <scene sceneID="f6g-Q1-pLm">
             <objects>
-                <viewController id="77Q-8P-7AU" customClass="LoginController" customModule="FurysApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginController" id="77Q-8P-7AU" customClass="LoginController" customModule="FurysApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="70A-hc-FYA"/>
                         <viewControllerLayoutGuide type="bottom" id="pIo-vj-nSU"/>
@@ -111,6 +111,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="loginReturnKeyPressed:" destination="77Q-8P-7AU" eventType="primaryActionTriggered" id="TS7-JJ-Ut6"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAh-GQ-Lt6">
                                 <rect key="frame" x="163" y="468" width="46" height="30"/>
@@ -353,7 +356,10 @@
                                                 <rect key="frame" x="107" y="341" width="160.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <action selector="returnKeyPressed:" destination="hvb-c5-aLJ" eventType="primaryActionTriggered" id="ucn-U9-S2t"/>
+                                                </connections>
                                             </textField>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Furys_logo_grey" translatesAutoresizingMaskIntoConstraints="NO" id="h4W-Ey-bdn">
                                                 <rect key="frame" x="97" y="59" width="180" height="120"/>
@@ -541,7 +547,7 @@
                                 <rect key="frame" x="16" y="72" width="343" height="471"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="basketCell" id="ZOf-b1-Ssn">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="basketCell" id="ZOf-b1-Ssn" customClass="BasketTableViewCell" customModule="FurysApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZOf-b1-Ssn" id="uxg-pz-LmF">
@@ -573,6 +579,10 @@
                                                 <constraint firstItem="8pW-kf-Moi" firstAttribute="top" secondItem="uxg-pz-LmF" secondAttribute="topMargin" constant="3" id="z4F-Uu-pBq"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="8pW-kf-Moi" id="Oov-fY-sn1"/>
+                                            <outlet property="quantityLabel" destination="ocu-Kf-x7H" id="v5i-bm-uUy"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

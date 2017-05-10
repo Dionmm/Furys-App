@@ -46,12 +46,31 @@ class RegisterController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
+    @IBAction func returnKeyPressed(_ sender: UITextField) {
+        register(sender)
+    }
     
-    @IBAction func register(_ sender: UIButton) {
+    @IBAction func register(_ sender: Any) {
         let brain = APIBrain.shared
         if !(username.text?.isEmpty)! && !(email.text?.isEmpty)! && !(password.text?.isEmpty)! && (password.text! == confirmPassword.text!){
-            brain.registerUser(username: username.text!, password: password.text!, email: email.text!){data in
-                print(data)
+            brain.registerUser(username: username.text!, password: password.text!, email: email.text!){data, responseCode in
+                
+                DispatchQueue.main.async {
+                    if responseCode == 200 {
+                        let alert = UIAlertController(title: "Registered", message: "You've successfully registered, you may now login!", preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {action in
+                            let next = self.storyboard?.instantiateViewController(withIdentifier: "LoginController")
+                            self.present(next!, animated: true, completion: nil)
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                        
+                        
+                    } else{
+                        let alert = UIAlertController(title: "Error", message: "Something went wrong, please try again", preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }
             }
         } else{
             print("No Text")

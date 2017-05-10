@@ -26,7 +26,10 @@ class LoginController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     
-    @IBAction func loginButton(_ sender: UIButton) {
+    @IBAction func loginReturnKeyPressed(_ sender: Any) {
+        loginButton(sender)
+    }
+    @IBAction func loginButton(_ sender: Any) {
         let x = APIBrain.shared
         if !(email.text?.isEmpty)! && !(password.text?.isEmpty)!{
             x.loginUser(username: email.text!, password: password.text!){ data, responseCode in

@@ -11,7 +11,7 @@ import UIKit
 class BeerTableViewController: UITableViewController {
 
     private var drinks = [Drink]()
-    
+    private var brain = APIBrain.shared
     //Pull this out in own file so it's global
     enum beverageType {
         case beer
@@ -83,9 +83,18 @@ class BeerTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Drink", for: indexPath)
         // Configure the cell...
         let drink = drinks[indexPath.row]
+        
+        var quantity = 0
+        for item in brain.basket{
+            if item.id == drink.id{
+                quantity += 1
+            }
+        }
+        print(quantity)
+        
         if let drinkCell = cell as? DrinksTableViewCell{
+            drinkCell.quantity = quantity
             drinkCell.drink = drink
-            drinkCell.parentNavController = self.parent as! FurysNavigationController!
         }
 
         return cell

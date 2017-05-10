@@ -29,28 +29,24 @@ class DrinksTableViewCell: UITableViewCell {
     var drink: Drink!{
         didSet{
             updateUI()
-            drinkId = drink.id
         }
     }
     
-    var drinkId: String?
+    var quantity = 0
     
-    var parentNavController: FurysNavigationController!{
-        didSet{
-            brain = parentNavController.brain
-        }
-    }
-    
-    var brain = APIBrain.shared
+    private var brain = APIBrain.shared
     
     @IBAction func updateCart(_ sender: UIButton) {
         var updateMethod = String()
         if sender.currentTitle == "+" {
             updateMethod = "add"
+            self.quantity += 1
+            
         } else{
             updateMethod = "remove"
+            self.quantity -= 1
         }
-        
+        updateQuantityLabel(with: quantity)
         brain.updateCart(method: updateMethod, with: drink){ result in
             print(result)
         }
@@ -62,9 +58,11 @@ class DrinksTableViewCell: UITableViewCell {
         DrinkNameLabel?.text = drink.name
         PriceLabel?.text = "£\(drinkPrice)"
         QuantityLabel?.text = ""
+        updateQuantityLabel(with: quantity)
     }
     
     func updateQuantityLabel(with value: Int){
+        
         QuantityLabel?.text = "\(value)"
     }
 }
