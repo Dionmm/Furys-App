@@ -44,7 +44,9 @@ class DrinksTableViewCell: UITableViewCell {
             
         } else{
             updateMethod = "remove"
-            self.quantity -= 1
+            if self.quantity > 0{
+                self.quantity -= 1
+            }
         }
         updateQuantityLabel(with: quantity)
         brain.updateCart(method: updateMethod, with: drink){ result in

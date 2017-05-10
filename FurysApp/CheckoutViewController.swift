@@ -10,20 +10,32 @@ import UIKit
 import Stripe
 
 class CheckoutViewController: UIViewController, PKPaymentAuthorizationViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        print("loaded")
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        DispatchQueue.main.async {
+            self.calcQuantities()
+            self.basketContentsTable.reloadData()
+            print("reloaded")
+            
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     var paymentSucceeded = false
-    var brain = APIBrain.shared
+    private var brain = APIBrain.shared
+    private var orderResponse = [String: Any]()
     
     func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController,
                                             didAuthorizePayment payment: PKPayment, completion: @escaping (PKPaymentAuthorizationStatus) -> Void) {
@@ -33,8 +45,16 @@ class CheckoutViewController: UIViewController, PKPaymentAuthorizationViewContro
             if (error != nil) {
                 completion(.failure)
             } else {
-                self.paymentSucceeded = true
-                completion(.success)
+                self.brain.createOrder(token: (token?.tokenId)!){ data, responseCode in
+                    DispatchQueue.main.async {
+                        if responseCode == 200{
+                            self.brain.orderId = data["OrderId"]
+                            self.orderResponse = data
+                            self.paymentSucceeded = true
+                            completion(.success)
+                        }
+                    }
+                }
             }
         }
     }
@@ -44,7 +64,7 @@ class CheckoutViewController: UIViewController, PKPaymentAuthorizationViewContro
             //payemtn succeeded
             if (self.paymentSucceeded) {
                 // show a receipt page
-                let next = self.storyboard?.instantiateViewController(withIdentifier: "TrackOrder")
+                let next = self.storyboard?.instantiateViewController(withIdentifier: "TrackOrder") as! OrderTrackingViewController?
                 self.present(next!, animated: true, completion: nil)
             }
         })
@@ -61,7 +81,7 @@ class CheckoutViewController: UIViewController, PKPaymentAuthorizationViewContro
         paymentRequest.countryCode = "GB"
         paymentRequest.currencyCode = "GBP"
         paymentRequest.paymentSummaryItems = calcTotalCost()
-        print(Stripe.canSubmitPaymentRequest(paymentRequest))
+        
         if Stripe.canSubmitPaymentRequest(paymentRequest){
             let paymentAuthorisationVC = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest)
             paymentAuthorisationVC.delegate = self
@@ -80,31 +100,54 @@ class CheckoutViewController: UIViewController, PKPaymentAuthorizationViewContro
         itemArray.append(PKPaymentSummaryItem(label: "Furys Ayr", amount: NSDecimalNumber(value: totalCost)))
         return itemArray
     }
+    var drinksList = [String: Int]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return brain.basket.count
+        return drinksList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "basketCell", for: indexPath)
+        let array = Array(drinksList.keys)
+        var drink: Drink
         
-        let drink = brain.basket[indexPath.row]
-        if let drinkCell = cell as? BasketTableViewCell{
-            drinkCell.drink = drink
+        for item in brain.basket{
+            print(array[indexPath.row])
+            if item.name == array[indexPath.row]{
+                drink = item
+                print(drink)
+                if (drinksList[drink.name] != nil){
+                    if let drinkCell = cell as? BasketTableViewCell{
+                        drinkCell.quantity = drinksList[drink.name]!
+                        drinkCell.drink = drink
+                    }
+                }
+            }
         }
         
         return cell
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func calcQuantities(){
+        var counts = [String: Int]()
+        
+        for item in brain.basket{
+            counts[item.name] = (counts[item.name] ?? 0) + 1
+        }
+        print(counts)
+        
+        drinksList = counts
     }
-    */
-
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

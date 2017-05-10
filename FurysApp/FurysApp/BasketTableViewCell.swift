@@ -27,14 +27,24 @@ class BasketTableViewCell: UITableViewCell {
         }
     }
 
+    var quantity = 0
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     
     private func updateUI(){
         //Grab Anyobject price, convert to double and format to 2 decimal places
 //        let drinkPrice = String(format: "%.2f", drink.price)
         nameLabel?.text = drink.name
         quantityLabel?.text = ""
+        updateQuantityLabel(with: quantity)
+        let drinkPrice = String(format: "%.2f", Double(quantity) * drink.price)
+        priceLabel?.text = "£\(drinkPrice)"
+    }
+    
+    func updateQuantityLabel(with value: Int){
+        
+        quantityLabel?.text = "x\(value)"
     }
     
 }

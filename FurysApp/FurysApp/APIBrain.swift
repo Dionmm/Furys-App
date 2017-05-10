@@ -20,6 +20,7 @@ class APIBrain {
     var url = "https://api.furysayr.co.uk"
     var user: User?
     var basket = [Drink]()
+    var orderId: Any?
     
     private let grantType = "password" //For ASP Identity when logging in
     
@@ -242,30 +243,36 @@ class APIBrain {
             }
         }
         print()
-        
-//        if updatingCart == true{
-//            callback(false)
-//        }
-//        
-//        let cartURL = createURL(to: "/cart")
-//        let requestDictionary = [
-//            "drinkId": drinkId
-//        ]
-//        let requestBody = createURLEncode(of: requestDictionary)
-//        var requestType = "POST"
-//        if user?.hasBasket == true{
-//            requestType = "UPDATE"
-//        }
-//        createRequest(type: requestType, to: cartURL, with: requestBody){data, responseCode in
-//            if responseCode == 200{
-//                callback(true)
-//            } else{
-//                callback(false)
-//            }
-//        }
     }
     
-//    func createOrder(token: String, callback: @escaping (Dictionary<String, Any>)){
-//        
-//    }
+    func createOrder(token: String, callback: @escaping (Dictionary<String, Any>, Int) -> ()){
+        let orderURL = createURL(to: "/order")
+        var drinksDictionary = [
+            "token": token
+        ]
+        var count = 0
+        for drink in self.basket{
+            drinksDictionary["Drinks[\(count)].Id"] = drink.id
+            count += 1
+        }
+        print(drinksDictionary)
+        
+        let requestBody = createURLEncode(of: drinksDictionary)
+        createRequest(type: "POST", to: orderURL, with: requestBody){data, responseCode in
+            do{
+                if let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]{
+                    print("JSON decode succeeded")
+                    callback(json, responseCode)
+                } else {
+                    print("No JSON")
+                    
+                    callback(["error": "Problem decoding JSON"], responseCode)
+                }
+            } catch{
+                print("JSON decode failed")
+                callback(["error": "Problem decoding JSON"], responseCode)
+            }
+            
+        }
+    }
 }
