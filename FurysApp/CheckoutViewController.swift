@@ -13,17 +13,16 @@ class CheckoutViewController: UIViewController, PKPaymentAuthorizationViewContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        print("loaded")
+        self.applePayButton.layer.cornerRadius = 5.0
+        self.basketContentsTable.separatorColor = UIColor.clear
         // Do any additional setup after loading the view.
     }
     
+    @IBOutlet weak var applePayButton: UIButton!
     override func viewWillAppear(_ animated: Bool) {
         DispatchQueue.main.async {
             self.calcQuantities()
             self.basketContentsTable.reloadData()
-            print("reloaded")
             
         }
     }
@@ -35,7 +34,6 @@ class CheckoutViewController: UIViewController, PKPaymentAuthorizationViewContro
     
     var paymentSucceeded = false
     private var brain = APIBrain.shared
-    private var orderResponse = [String: Any]()
     
     func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController,
                                             didAuthorizePayment payment: PKPayment, completion: @escaping (PKPaymentAuthorizationStatus) -> Void) {
@@ -48,8 +46,7 @@ class CheckoutViewController: UIViewController, PKPaymentAuthorizationViewContro
                 self.brain.createOrder(token: (token?.tokenId)!){ data, responseCode in
                     DispatchQueue.main.async {
                         if responseCode == 200{
-                            self.brain.orderId = data["OrderId"]
-                            self.orderResponse = data
+                            self.brain.order = data
                             self.paymentSucceeded = true
                             completion(.success)
                         }
@@ -64,7 +61,7 @@ class CheckoutViewController: UIViewController, PKPaymentAuthorizationViewContro
             //payemtn succeeded
             if (self.paymentSucceeded) {
                 // show a receipt page
-                let next = self.storyboard?.instantiateViewController(withIdentifier: "TrackOrder") as! OrderTrackingViewController?
+                let next = self.storyboard?.instantiateViewController(withIdentifier: "TrackOrder") as! FurysNavigationController?
                 self.present(next!, animated: true, completion: nil)
             }
         })
@@ -74,9 +71,7 @@ class CheckoutViewController: UIViewController, PKPaymentAuthorizationViewContro
     @IBOutlet weak var basketContentsTable: UITableView!
     
     @IBAction func applePay(_ sender: UIButton) {
-        let x = self.parent as! FurysNavigationController
         
-        print(x.brain.basket)
         let paymentRequest = Stripe.paymentRequest(withMerchantIdentifier: "merchant.com.Dionmm.FurysApp")
         paymentRequest.countryCode = "GB"
         paymentRequest.currencyCode = "GBP"
@@ -108,7 +103,11 @@ class CheckoutViewController: UIViewController, PKPaymentAuthorizationViewContro
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        print("\(self.basketContentsTable.bounds.width) BB")
+        print("\(self.basketContentsTable.frame.size.width) BF")
         let cell = tableView.dequeueReusableCell(withIdentifier: "basketCell", for: indexPath)
+        
         let array = Array(drinksList.keys)
         var drink: Drink
         

@@ -20,7 +20,7 @@ class APIBrain {
     var url = "https://api.furysayr.co.uk"
     var user: User?
     var basket = [Drink]()
-    var orderId: Any?
+    var order = [String: Any]()
     
     private let grantType = "password" //For ASP Identity when logging in
     

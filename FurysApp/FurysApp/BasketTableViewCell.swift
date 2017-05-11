@@ -13,6 +13,15 @@ class BasketTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+//        self.frame.size.width = 374
+        let whiteRoundedView = UIView(frame: CGRect(x: 10, y: 8, width: self.bounds.width - 10, height: self.bounds.height - 10))
+        whiteRoundedView.layer.backgroundColor = UIColor.white.cgColor
+        whiteRoundedView.layer.masksToBounds = false
+        whiteRoundedView.layer.cornerRadius = 2.0
+        whiteRoundedView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        whiteRoundedView.layer.shadowOpacity = 0.2
+        self.contentView.addSubview(whiteRoundedView)
+        self.contentView.sendSubview(toBack: whiteRoundedView)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

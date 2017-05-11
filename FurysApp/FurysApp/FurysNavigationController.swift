@@ -33,8 +33,6 @@ class FurysNavigationController: UINavigationController {
         return false
     }
     
-    var brain = APIBrain.shared
-    
     
     /*
     // MARK: - Navigation
